@@ -131,7 +131,7 @@ public class GachonDataProcessor extends DataHandler implements DataProcessor{
                         c.getDouble(TAG_Longitude),
                         c.getDouble(TAG_Altitude),
                         6,
-                        uri);
+                        "http://heinemann.cafe24.com/getNamePOIData.php?name="+c.getString(TAG_NAME));
                 markers.add(ma);
             }
 

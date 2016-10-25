@@ -69,7 +69,7 @@ public class ClickHandler implements Parcelable{
 	
 	public boolean handleClick(float x, float y, MixContextInterface ctx, MixStateInterface state){
 		if(isClickValid(x, y)){
-			return state.handleEvent(ctx, url);
+			return state.handleEvent (ctx, url);
 		}
 		return false;
 	}

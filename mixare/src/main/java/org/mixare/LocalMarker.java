@@ -207,8 +207,10 @@ public abstract class LocalMarker implements Marker {
 		}
 	}
 
+	// (수정부분)
 	public void draw(PaintScreen dw) {
-		drawCircle(dw);
+
+		//drawCircle(dw);
 		drawTextBlock(dw);
 	}
 

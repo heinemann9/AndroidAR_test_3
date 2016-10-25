@@ -141,9 +141,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			}
 
-			Toast.makeText(MixView.this,"함수시작", Toast.LENGTH_LONG).show();
-			//alertFarFromMountain();
-			Toast.makeText(MixView.this,"함수완료", Toast.LENGTH_LONG).show();
 		} catch (Exception ex) {
 			doError(ex);
 		}
