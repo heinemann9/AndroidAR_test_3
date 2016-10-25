@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\osm.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\osm.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\wikipedia.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\wikipedia.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    }
+]

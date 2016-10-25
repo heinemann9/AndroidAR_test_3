@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\datasourcelist.xml",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\layout\\datasourcelist.xml"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\datasourcedetails.xml",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\layout\\datasourcedetails.xml"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\splashscreen.xml",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\layout\\splashscreen.xml"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\webview.xml",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\layout\\webview.xml"
+    }
+]
