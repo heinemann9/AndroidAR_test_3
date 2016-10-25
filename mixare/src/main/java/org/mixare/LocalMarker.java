@@ -36,6 +36,7 @@ import org.mixare.lib.render.Camera;
 import org.mixare.lib.render.MixVector;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 
 /**
@@ -207,11 +208,26 @@ public abstract class LocalMarker implements Marker {
 		}
 	}
 
-	// (수정부분)
+	// 기존 draw
 	public void draw(PaintScreen dw) {
 
 		//drawCircle(dw);
+
+		//drawTextBlock(dw);
+	}
+
+	// 이상적 draw
+	public void draw(PaintScreen dw, MixContext ctx){
+		drawMarker(dw,ctx);
 		drawTextBlock(dw);
+	}
+
+	// 이상적인 drawMarker
+	public void drawMarker(PaintScreen dw, MixContext ctx) {
+		if (isVisible) {
+			Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.building);
+			dw.paintBitmap(bitmap, cMarker.x, cMarker.y);
+		}
 	}
 
 	public void drawCircle(PaintScreen dw) {
