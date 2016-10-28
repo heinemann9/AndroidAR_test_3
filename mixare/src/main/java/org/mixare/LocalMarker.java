@@ -294,6 +294,16 @@ public abstract class LocalMarker implements Marker {
 		return evtHandled;
 	}
 
+	/*
+	public boolean fClick(float x, float y, MixContextInterface ctx, MixStateInterface state) {
+		boolean evtHandled = false;
+
+		if (isClickValid(x, y)) {
+			evtHandled = state.handleEvent(ctx, URL);
+		}
+		return evtHandled;
+	}
+	*/
 	public double getDistance() {
 		return distance;
 	}

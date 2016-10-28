@@ -399,6 +399,7 @@ public class DataView {
 		}
 	}
 
+	// 이 부분 수정해얄 것으로 판단.. !!
 	boolean handleClickEvent(ClickEvent evt) {
 		boolean evtHandled = false;
 
