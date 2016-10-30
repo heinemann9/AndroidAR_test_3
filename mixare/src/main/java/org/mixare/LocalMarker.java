@@ -218,7 +218,7 @@ public abstract class LocalMarker implements Marker {
 
 	// 이상적 draw
 	public void draw(PaintScreen dw, MixContext ctx){
-		drawMarker(dw,ctx);
+		drawMarker(dw, ctx);
 		drawTextBlock(dw);
 	}
 
@@ -242,10 +242,10 @@ public abstract class LocalMarker implements Marker {
 			//draw circle with radius depending on distance
 			//0.44 is approx. vertical fov in radians 
 			double angle = 2.0*Math.atan2(10,distance);
-			double radius = Math.max(Math.min(angle/0.44 * maxHeight, maxHeight),maxHeight/25f);
+			double radius = Math.max(Math.min(angle / 0.44 * maxHeight, maxHeight), maxHeight / 25f);
 			//double radius = angle/0.44d * (double)maxHeight;
 
-			dw.paintCircle(cMarker.x, cMarker.y, (float)radius);
+			dw.paintCircle(cMarker.x, cMarker.y, (float) radius);
 		}
 	}
 
@@ -295,16 +295,6 @@ public abstract class LocalMarker implements Marker {
 		return evtHandled;
 	}
 
-	/*
-	public boolean fClick(float x, float y, MixContextInterface ctx, MixStateInterface state) {
-		boolean evtHandled = false;
-
-		if (isClickValid(x, y)) {
-			evtHandled = state.handleEvent(ctx, URL);
-		}
-		return evtHandled;
-	}
-	*/
 	public double getDistance() {
 		return distance;
 	}

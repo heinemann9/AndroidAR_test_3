@@ -18,6 +18,8 @@
  */
 package org.mixare;
 
+import android.content.Intent;
+
 import org.mixare.data.convert.GachonDataProcessor;
 import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.MixStateInterface;
@@ -38,6 +40,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class MixState implements MixStateInterface{
 
+	MixContext mixcontext;
+
 	public static int NOT_STARTED = 0; 
 	public static int PROCESSING = 1; 
 	public static int READY = 2; 
@@ -56,6 +60,7 @@ public class MixState implements MixStateInterface{
 	// activity로 넘기기위한 handle Event
 	@Override
 	public boolean handleEvent_to_Activity(MixContextInterface ctx, String onPress) {
+		mixcontext = (MixContext) ctx;
 		if (onPress != null && onPress.startsWith("webpage")) {
 			try {
 				String webpage = MixUtils.parseAction(onPress);
@@ -67,6 +72,10 @@ public class MixState implements MixStateInterface{
 					this.uri = webpage;
 					temp = json.execute(uri).get();
 					System.out.println("temp:" + temp);
+
+					// 액티비티 넘기기
+					Intent intent = new Intent(mixcontext,POIActivity.class);
+					mixcontext.startActivity(intent);
 
 				} catch (InterruptedException e) {
 					e.printStackTrace();
