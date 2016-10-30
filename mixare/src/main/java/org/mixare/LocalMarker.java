@@ -211,9 +211,9 @@ public abstract class LocalMarker implements Marker {
 	// 기존 draw
 	public void draw(PaintScreen dw) {
 
-		//drawCircle(dw);
+		drawCircle(dw);
 
-		//drawTextBlock(dw);
+		drawTextBlock(dw);
 	}
 
 	// 이상적 draw
@@ -289,7 +289,8 @@ public abstract class LocalMarker implements Marker {
 		boolean evtHandled = false;
 
 		if (isClickValid(x, y)) {
-			evtHandled = state.handleEvent(ctx, URL);
+			//evtHandled = state.handleEvent(ctx, URL);
+			evtHandled = state.handleEvent_to_Activity(ctx, URL);
 		}
 		return evtHandled;
 	}

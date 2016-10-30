@@ -19,6 +19,7 @@
 
 package org.mixare;
 
+import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.gui.PaintScreen;
 
 import android.location.Location;
@@ -74,6 +75,11 @@ public class SocialMarker extends LocalMarker {
 				dw.paintCircle(cMarker.x, cMarker.y, maxHeight / 1.5f);
 			//}
 		}
+	}
+
+	@Override
+	public boolean fClick(float x, float y, MixContextInterface ctx) {
+		return false;
 	}
 
 	@Override

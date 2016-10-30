@@ -20,6 +20,7 @@
 package org.mixare;
 
 import org.mixare.LocalMarker;
+import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.MixUtils;
 import org.mixare.lib.gui.PaintScreen;
 
@@ -61,7 +62,12 @@ public class NavigationMarker extends LocalMarker {
 		drawArrow(dw);
 		drawTextBlock(dw);
 	}
-	
+
+	@Override
+	public boolean fClick(float x, float y, MixContextInterface ctx) {
+		return false;
+	}
+
 	public void drawArrow(PaintScreen dw) {
 		if (isVisible) {
 			float currentAngle = MixUtils.getAngle(cMarker.x, cMarker.y, signMarker.x, signMarker.y);

@@ -184,7 +184,12 @@ public class RemoteMarker implements Marker{
 			throw new PluginNotFoundException(e);
 		}
 	}
-	
+
+	@Override
+	public boolean fClick(float x, float y, MixContextInterface ctx) {
+		return false;
+	}
+
 	public void setTxtLab(Label txtLab){
 		try{
 			if(txtLab != null){

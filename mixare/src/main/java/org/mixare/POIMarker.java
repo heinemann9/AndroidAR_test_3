@@ -22,6 +22,7 @@ package org.mixare;
 import java.text.DecimalFormat;
 
 import org.mixare.LocalMarker;
+import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.MixUtils;
 import org.mixare.lib.gui.PaintScreen;
 import org.mixare.lib.gui.TextObj;
@@ -57,6 +58,11 @@ public class POIMarker extends LocalMarker {
 	@Override
 	public void update(Location curGPSFix) {
 		super.update(curGPSFix);
+	}
+
+	@Override
+	public boolean fClick(float x, float y, MixContextInterface ctx) {
+		return false;
 	}
 
 	@Override

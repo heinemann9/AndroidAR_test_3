@@ -18,11 +18,20 @@
  */
 package org.mixare;
 
+import org.mixare.data.convert.GachonDataProcessor;
 import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.MixStateInterface;
 import org.mixare.lib.MixUtils;
+import org.mixare.lib.marker.Marker;
 import org.mixare.lib.render.Matrix;
 import org.mixare.lib.render.MixVector;
+
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This class calculates the bearing and pitch out of the angles
@@ -41,6 +50,37 @@ public class MixState implements MixStateInterface{
 	private float curPitch;
 
 	private boolean detailsView;
+
+	String temp = "",uri = "";
+
+	// activity로 넘기기위한 handle Event
+	@Override
+	public boolean handleEvent_to_Activity(MixContextInterface ctx, String onPress) {
+		if (onPress != null && onPress.startsWith("webpage")) {
+			try {
+				String webpage = MixUtils.parseAction(onPress);
+				this.detailsView = true;
+
+				GetDataJSON json = new GetDataJSON();
+
+				try {
+					this.uri = webpage;
+					temp = json.execute(uri).get();
+					System.out.println("temp:" + temp);
+
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (ExecutionException e) {
+					e.printStackTrace();
+				}
+
+				//ctx.loadMixViewWebPage(webpage);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return true;
+	}
 
 	public boolean handleEvent(MixContextInterface ctx, String onPress) {
 		if (onPress != null && onPress.startsWith("webpage")) {
