@@ -8,7 +8,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="10" />
+        android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -111,6 +111,7 @@
         </activity>
         <activity android:name="org.mixare.data.DataSource" />
         <activity android:name="org.mixare.data.DataSourceList" />
+        <activity android:name="org.mixare.POIActivity" />
     </application>
 
 </manifest>

@@ -4,11 +4,11 @@
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\osm.png"
     },
     {
-        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
-        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\wikipedia.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\wikipedia.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\ic_launcher.png"
     }
 ]

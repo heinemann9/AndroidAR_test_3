@@ -4,7 +4,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="10" />
+        android:targetSdkVersion="21" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -112,6 +112,7 @@
         </activity>
         <activity android:name="org.mixare.data.DataSource" />
         <activity android:name="org.mixare.data.DataSourceList" />
+        <activity android:name="org.mixare.POIActivity" />
     </application>
 
 </manifest>

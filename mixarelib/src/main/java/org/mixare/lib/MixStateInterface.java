@@ -25,6 +25,7 @@ package org.mixare.lib;
  */
 public interface MixStateInterface {
 
+	boolean handleEvent_to_Activity(MixContextInterface ctx, String onPress);
 	boolean handleEvent(MixContextInterface ctx, String onPress);
 	
 }

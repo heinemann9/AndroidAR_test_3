@@ -52,7 +52,7 @@ public class POIActivity extends Activity {
         setContentView(R.layout.poi_info);
 
         //name = (TextView) findViewById(R.id.name);
-        picture = (ImageView)findViewById(R.id.picture);
+        picture = (ImageView)findViewById(R.id.POI_picture);
         structure_intro = (TextView) findViewById(R.id.Structure_intro);
         tel_info = (TextView) findViewById(R.id.Tel_info);
         floor_info = (TextView) findViewById(R.id.Floor_info);

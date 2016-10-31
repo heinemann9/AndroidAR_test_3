@@ -1,7 +1,7 @@
 [
     {
-        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\osm.png",
-        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\osm.png"
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\menu.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\menu.png"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\wikipedia.png",
@@ -10,5 +10,21 @@
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\search.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\search.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\osm.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\osm.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\menu1.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\menu1.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\background.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\background.png"
     }
 ]

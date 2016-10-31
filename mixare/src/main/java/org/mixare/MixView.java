@@ -66,6 +66,7 @@ import android.util.FloatMath;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -76,6 +77,7 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -117,8 +119,10 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 			maintainCamera();
+			maintainMenu();
 			maintainAugmentR();
 			maintainZoomBar();
+
 			
 			if (!isInited) {
 				//getMixViewData().setMixContext(new MixContext(this));
@@ -140,6 +144,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				firstAccess(settings);
 
 			}
+
 
 		} catch (Exception ex) {
 			doError(ex);
@@ -201,7 +206,8 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				Log.d(TAG + " WorkFlow",
 						"MixView - Received Refresh Screen Request .. about to refresh");
 				repaint();
-				refreshDownload();
+				refresh();
+				//refreshDownload();
 			}
 
 		} catch (Exception ex) {
@@ -215,7 +221,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 		try {
 			this.getMixViewData().getmWakeLock().acquire();
-
 
 			killOnError();
 			getMixViewData().getMixContext().doResume(this);
@@ -356,9 +361,11 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	protected void onRestart (){
 		super.onRestart();
 		maintainCamera();
+		maintainMenu();
 		maintainAugmentR();
 		maintainZoomBar();
-		
+
+
 	}
 	
 	/* ********* Operators ***********/ 
@@ -403,6 +410,12 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		addContentView(frameLayout, new FrameLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT,
 				Gravity.BOTTOM));
+	}
+
+	private void maintainMenu(){
+		LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View v  = vi.inflate(R.layout.activity_main, null);
+		this.addContentView(v, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 	}
 	
 	/**
@@ -980,30 +993,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		getMixViewData().getMixContext().getDownloadManager().switchOn();
 
 	};
-
-	/*private void alertFarFromMountain(){
-		Log.d(TAG + " 함수 1", "함수 1 ");
-		if(!getDataView().checkNearNaeJangMountatin()){
-			AlertDialog.Builder alertFarBuilder = new AlertDialog.Builder(this);
-			alertFarBuilder.setMessage("내장산과의 거리가 20km를 초과하여 제대로 보이지 않을 수 있습니다. \r계속하시겠습니까?");
-			alertFarBuilder.setPositiveButton("계속하기", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int id) {
-					dialog.dismiss();
-					Toast.makeText(MixView.this,"강제로 보려면 시야 설정에서 넓은 시야범위를 선택하세요.", Toast.LENGTH_LONG).show();
-				}
-			});
-			alertFarBuilder.setNegativeButton("나가기", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int id) {
-					dialog.dismiss();
-					MixView.this.finish();
-				}
-			});
-			AlertDialog alert1 = alertFarBuilder.create();
-			alert1.setTitle("거리 경고");
-			alert1.show();
-		}
-		Log.d(TAG + " 함수 2", "함수 2 ");
-	}*/
 
 }
 

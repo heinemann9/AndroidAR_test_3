@@ -71,6 +71,9 @@ public interface Marker extends Comparable<Marker>{
 
 	Label getTxtLab();
 
+	// click시 url로부터 data 받아오고 액티비티 넘겨주기
+	public boolean fClick(float x, float y, MixContextInterface ctx);
+
 	public boolean fClick(float x, float y, MixContextInterface ctx, MixStateInterface state);
 
 	int getMaxObjects();

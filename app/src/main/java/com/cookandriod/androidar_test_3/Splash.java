@@ -1,6 +1,7 @@
 package com.cookandriod.androidar_test_3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -20,6 +21,7 @@ public class Splash extends Activity {
 
             @Override
             public void run() {
+
                 finish();       // 3 초후 이미지를 닫아버림
             }
         }, 3000);
