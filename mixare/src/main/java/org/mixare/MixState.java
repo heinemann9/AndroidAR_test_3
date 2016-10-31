@@ -75,6 +75,7 @@ public class MixState implements MixStateInterface{
 
 					// 액티비티 넘기기
 					Intent intent = new Intent(mixcontext,POIActivity.class);
+					intent.putExtra("json",temp);
 					mixcontext.startActivity(intent);
 
 				} catch (InterruptedException e) {
