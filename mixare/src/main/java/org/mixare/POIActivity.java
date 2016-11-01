@@ -51,7 +51,7 @@ public class POIActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.poi_info);
 
-        //name = (TextView) findViewById(R.id.name);
+        name = (TextView) findViewById(R.id.POI_name);
         picture = (ImageView)findViewById(R.id.POI_picture);
         structure_intro = (TextView) findViewById(R.id.Structure_intro);
         tel_info = (TextView) findViewById(R.id.Tel_info);
@@ -75,13 +75,13 @@ public class POIActivity extends Activity {
                 JSONObject c = arr.getJSONObject(i);
 
                 // picture 받아오기
-                if(c.getString(TAG_Picture) != null) {
+                if(c.getString(TAG_Picture) != "null") {
                     url[i] += c.getString(TAG_Picture);
                     LoadBitmap task = new LoadBitmap();
                     task.execute(url[i]);
                 }
                 // 그 외 data 받아오기
-                //name.setText(c.getString(TAG_NAME));
+                name.setText(c.getString(TAG_NAME));
                 structure_intro.setText(c.getString(TAG_Structure_Info));
                 tel_info.setText(c.getString(TAG_Tel_Info));
                 floor_info.setText(c.getString(TAG_Floor_Info));
@@ -123,5 +123,8 @@ public class POIActivity extends Activity {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

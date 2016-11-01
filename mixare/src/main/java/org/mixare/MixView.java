@@ -76,7 +76,9 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -98,6 +100,16 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	// TAG for logging
 	public static final String TAG = "Mixare";
 
+	ImageButton img1,img2;
+	ImageButton menu_img1,menu_img2;
+	ImageButton edit_img1,edit_img2;
+	RelativeLayout menu_relative1,menu_relative2;
+	RelativeLayout edit_relative, main_relative;
+	EditText search;
+	TextView textAll,textSchool,textFood,textBook,textETC,textOption;
+
+	boolean menu_flag,edit_flag;
+
 	// why use Memory to save a state? MixContext? activity lifecycle?
 	//private static MixView CONTEXT;
 
@@ -109,7 +121,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		super.onCreate(savedInstanceState);
 		//MixView.CONTEXT = this;
 		try {
-						
+
 			handleIntent(getIntent());
 
 			final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -145,9 +157,113 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			}
 
+			// 메뉴
+			img1 = (ImageButton)findViewById(R.id.img1);
+			img2 = (ImageButton)findViewById(R.id.img2);
+
+			menu_img1 = (ImageButton)findViewById(R.id.menu_img1);
+			menu_img2 = (ImageButton)findViewById(R.id.menu_img2);
+
+			menu_relative1 = (RelativeLayout)findViewById(R.id.menu_relative1);
+			menu_relative2 = (RelativeLayout)findViewById(R.id.menu_relative2);
+
+			edit_img1 = (ImageButton)findViewById(R.id.edit_img1);
+			edit_img2 = (ImageButton)findViewById(R.id.edit_img2);
+
+			main_relative = (RelativeLayout)findViewById(R.id.main_relative);
+			edit_relative = (RelativeLayout)findViewById(R.id.edit_relative);
+
+			search = (EditText)findViewById(R.id.edit_search);
+
+			menu_flag = false;
+			edit_flag = false;
+
+			textAll = (TextView) findViewById(R.id.textAll);
+			textSchool = (TextView) findViewById(R.id.textSchool);
+			textFood = (TextView) findViewById(R.id.textFood);
+			textBook = (TextView) findViewById(R.id.textBook);
+			textETC = (TextView) findViewById(R.id.textETC);
+			textOption = (TextView) findViewById(R.id.textOption);
+
+			registerForContextMenu(textOption);
+
+
+			// 메뉴 클릭시 ..
+			img1.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					setPlusMenu(menu_flag);
+				}
+			});
+
+			menu_img1.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					setPlusMenu(menu_flag);
+				}
+			});
+
+			// 검색 클릭시 ..
+			img2.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					setSearchMenu(edit_flag);
+				}
+			});
+
+			menu_img2.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					setPlusMenu(edit_flag);
+				}
+			});
+
+			edit_img1.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					setSearchMenu(edit_flag);
+				}
+			});
+
+			textOption.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					openContextMenu(textOption);
+				}
+			});
 
 		} catch (Exception ex) {
 			doError(ex);
+		}
+	}
+
+	private void setPlusMenu(boolean mflag){
+		if(mflag == false) {
+			img1.setVisibility(View.GONE);
+			menu_relative1.setVisibility(View.VISIBLE);
+			menu_relative2.setVisibility(View.VISIBLE);
+			menu_flag = true;
+		}else if(mflag == true){
+			img1.setVisibility(View.VISIBLE);
+			menu_relative1.setVisibility(View.GONE);
+			menu_relative2.setVisibility(View.GONE);
+			menu_flag = false;
+		}
+	}
+
+	private void setSearchMenu(boolean sflag){
+		if(sflag == false) {
+			img1.setVisibility(View.GONE);
+			edit_relative.setVisibility(View.VISIBLE);
+			main_relative.setVisibility(View.GONE);
+
+			edit_flag = true;
+		}else if(sflag == true){
+			img1.setVisibility(View.VISIBLE);
+			edit_relative.setVisibility(View.GONE);
+			main_relative.setVisibility(View.VISIBLE);
+
+			edit_flag = false;
 		}
 	}
 
@@ -226,8 +342,8 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			getMixViewData().getMixContext().doResume(this);
 
 			repaint();
-			getDataView().doStart();
-			getDataView().clearEvents();
+			//getDataView().doStart();
+			//getDataView().clearEvents();
 
 			getMixViewData().getMixContext().getDataSourceManager().refreshDataSources();
 
@@ -364,8 +480,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		maintainMenu();
 		maintainAugmentR();
 		maintainZoomBar();
-
-
 	}
 	
 	/* ********* Operators ***********/ 

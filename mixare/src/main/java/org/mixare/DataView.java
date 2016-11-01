@@ -478,31 +478,6 @@ public class DataView {
 			}
 		});
 	}
-
-	public boolean checkNearNaeJangMountatin(){
-		//내장산
-		//double lat = 35.47835868;
-		//double lng = 126.8891443;
-
-		//서울
-		double lat = 37.564066;
-		double lng = 127.051430;
-		double radius = 20;
-		PhysicalPlace lb = new PhysicalPlace(); // left bottom
-		PhysicalPlace rt = new PhysicalPlace(); // right top
-		PhysicalPlace.calcDestination(lat, lng, 225, radius*1414, lb); // 1414: sqrt(2)*1000
-		PhysicalPlace.calcDestination(lat, lng, 45, radius*1414, rt);
-
-		mixContext.getLocationFinder().setLocationAtLastDownload(curFix);
-		curFix = mixContext.getLocationFinder().getCurrentLocation();	// no GPS Found
-
-		if(curFix.getLatitude() > lb.getLatitude() && curFix.getLatitude() < rt.getLatitude()){
-			if(curFix.getLongitude() > lb.getLongitude() && curFix.getLongitude() < rt.getLongitude())
-				return true;
-		}
-
-		return false;
-	}
 }
 
 class UIEvent {

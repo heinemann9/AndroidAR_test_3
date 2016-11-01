@@ -73,18 +73,18 @@ public class MixState implements MixStateInterface{
 					temp = json.execute(uri).get();
 					System.out.println("temp:" + temp);
 
-					// 액티비티 넘기기
-					Intent intent = new Intent(mixcontext,POIActivity.class);
-					intent.putExtra("json",temp);
-					mixcontext.startActivity(intent);
-
+					if(temp != null) {
+						// 액티비티 넘기기
+						Intent intent = new Intent(mixcontext, POIActivity.class);
+						intent.putExtra("json", temp);
+						mixcontext.startActivity(intent);
+					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} catch (ExecutionException e) {
 					e.printStackTrace();
 				}
 
-				//ctx.loadMixViewWebPage(webpage);
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
