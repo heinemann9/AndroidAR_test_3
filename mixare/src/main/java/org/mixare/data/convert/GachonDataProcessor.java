@@ -84,34 +84,6 @@ public class GachonDataProcessor extends DataHandler implements DataProcessor{
             e.printStackTrace();
         }
 
-        /*
-        JSONObject root = convertToJSON(rawData);
-        JSONArray dataArray = root.getJSONArray("geonames");
-
-        int top = Math.min(MAX_JSON_OBJECTS, dataArray.length());
-
-        for (int i = 0; i < top; i++) {
-            JSONObject jo = dataArray.getJSONObject(i);
-
-            Marker ma = null;
-            if (jo.has("title") && jo.has("lat") && jo.has("lng")
-                    && jo.has("elevation") && jo.has("GachonUrl")) {
-
-                Log.v(MixView.TAG, "processing Wikipedia JSON object");
-
-                //no unique ID is provided by the web service according to http://www.geonames.org/export/wikipedia-webservice.html
-                ma = new POIMarker(
-                        "",
-                        HtmlUnescape.unescapeHTML(jo.getString("title"), 0),
-                        jo.getDouble("lat"),
-                        jo.getDouble("lng"),
-                        jo.getDouble("elevation"),
-                        uri,
-                        taskId, colour);
-                markers.add(ma);
-            }
-        }
-        */
         return markers;
     }
     private void JsonToData(String getJson,List<Marker> markers){
@@ -137,25 +109,6 @@ public class GachonDataProcessor extends DataHandler implements DataProcessor{
 
         } catch (JSONException e) {
             e.printStackTrace();
-        }
-    }
-
-    class POIDATA {
-        double Altitude;
-        double Latitude;
-        double Longitude;
-
-        public POIDATA(){
-            this.Altitude = 0;
-            this.Latitude = 0;
-            this.Longitude = 0;
-        }
-
-        public POIDATA(double Altitude,double Latitude,double Longitude) {
-            super();
-            this.Altitude = Altitude;
-            this.Latitude = Latitude;
-            this.Longitude = Longitude;
         }
     }
 

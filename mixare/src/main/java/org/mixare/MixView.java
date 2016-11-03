@@ -26,21 +26,6 @@ package org.mixare;
  * It also handles the main sensor events, touch events and location events.
  */
 
-import static android.hardware.SensorManager.SENSOR_DELAY_GAME;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-
-import org.mixare.R.drawable;
-import org.mixare.data.DataHandler;
-import org.mixare.data.DataSourceList;
-import org.mixare.data.DataSourceStorage;
-import org.mixare.lib.gui.PaintScreen;
-import org.mixare.lib.marker.Marker;
-import org.mixare.lib.render.Matrix;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.SearchManager;
@@ -48,10 +33,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.hardware.Camera;
 import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -60,18 +42,16 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.provider.Settings;
-import android.util.FloatMath;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
@@ -83,6 +63,19 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.mixare.R.drawable;
+import org.mixare.data.DataHandler;
+import org.mixare.data.DataSourceList;
+import org.mixare.data.DataSourceStorage;
+import org.mixare.lib.gui.PaintScreen;
+import org.mixare.lib.marker.Marker;
+import org.mixare.lib.render.Matrix;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import static android.hardware.SensorManager.SENSOR_DELAY_GAME;
 
 public class MixView extends Activity implements SensorEventListener, OnTouchListener {
 
@@ -110,6 +103,13 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 	boolean menu_flag,edit_flag;
 
+	boolean multiChoice;
+	boolean choicedAll;
+	boolean choicedSchool;
+	boolean choicedFood;
+	boolean choicedBook;
+	boolean choicedETC;
+
 	// why use Memory to save a state? MixContext? activity lifecycle?
 	//private static MixView CONTEXT;
 
@@ -131,9 +131,9 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 			maintainCamera();
-			maintainMenu();
 			maintainAugmentR();
 			maintainZoomBar();
+			maintainMenu();
 
 			
 			if (!isInited) {
@@ -177,6 +177,12 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			menu_flag = false;
 			edit_flag = false;
+			multiChoice = false;
+			choicedAll = false;
+			choicedSchool = false;
+			choicedFood = false;
+			choicedBook = false;
+			choicedETC = false;
 
 			textAll = (TextView) findViewById(R.id.textAll);
 			textSchool = (TextView) findViewById(R.id.textSchool);
@@ -232,10 +238,225 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 			});
 
+			textAll.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (choicedAll == false) {
+						textAll.setTextColor(Color.rgb(255, 187, 0));
+						textSchool.setTextColor(Color.rgb(255, 187, 0));
+						textFood.setTextColor(Color.rgb(255, 187, 0));
+						textBook.setTextColor(Color.rgb(255, 187, 0));
+						textETC.setTextColor(Color.rgb(255, 187, 0));
+						choicedAll = true;
+						choicedSchool = true;
+						choicedFood = true;
+						choicedBook = true;
+						choicedETC = true;
+					} else {
+						textAll.setTextColor(Color.WHITE);
+						textSchool.setTextColor(Color.rgb(255, 187, 0));
+						textFood.setTextColor(Color.WHITE);
+						textBook.setTextColor(Color.WHITE);
+						textETC.setTextColor(Color.WHITE);
+						choicedAll = false;
+						choicedSchool = true;
+						choicedFood = false;
+						choicedBook = false;
+						choicedETC = false;
+					}
+
+				}
+			});
+
+			textSchool.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+
+					if(multiChoice == true){
+						if (choicedSchool == false) {
+							textSchool.setTextColor(Color.rgb(255, 187, 0));
+							choicedSchool = true;
+
+							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+								textAll.setTextColor(Color.rgb(255, 187, 0));
+						}
+						else {
+							textSchool.setTextColor(Color.WHITE);
+							choicedSchool = false;
+							textAll.setTextColor(Color.WHITE);
+							choicedAll = false;
+						}
+					}
+					else {
+						//to do
+						if(choicedSchool == false) {
+							textAll.setTextColor(Color.WHITE);
+							textSchool.setTextColor(Color.rgb(255, 187, 0));
+							textFood.setTextColor(Color.WHITE);
+							textBook.setTextColor(Color.WHITE);
+							textETC.setTextColor(Color.WHITE);
+							choicedAll = false;
+							choicedSchool = true;
+							choicedFood = false;
+							choicedBook = false;
+							choicedETC = false;
+						}
+					}
+				}
+			});
+
+			textFood.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+
+					if(multiChoice == true){
+						if (choicedFood == false) {
+							textFood.setTextColor(Color.rgb(255, 187, 0));
+							choicedFood = true;
+
+							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+								textAll.setTextColor(Color.rgb(255, 187, 0));
+						}
+						else {
+							textFood.setTextColor(Color.WHITE);
+							choicedFood = false;
+							textAll.setTextColor(Color.WHITE);
+							choicedAll = false;
+						}
+					}
+					else {
+						//to do
+						if(choicedFood == false) {
+							textAll.setTextColor(Color.WHITE);
+							textSchool.setTextColor(Color.WHITE);
+							textFood.setTextColor(Color.rgb(255, 187, 0));
+							textBook.setTextColor(Color.WHITE);
+							textETC.setTextColor(Color.WHITE);
+							choicedAll = false;
+							choicedSchool = false;
+							choicedFood = true;
+							choicedBook = false;
+							choicedETC = false;
+						}
+					}
+				}
+			});
+
+			textBook.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+
+					if(multiChoice == true){
+						if (choicedBook == false) {
+							textBook.setTextColor(Color.rgb(255, 187, 0));
+							choicedBook = true;
+
+							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+								textAll.setTextColor(Color.rgb(255, 187, 0));
+						}
+						else {
+							textBook.setTextColor(Color.WHITE);
+							choicedBook = false;
+							textAll.setTextColor(Color.WHITE);
+							choicedAll = false;
+						}
+					}
+					else {
+						//to do
+						if(choicedBook == false) {
+							textAll.setTextColor(Color.WHITE);
+							textSchool.setTextColor(Color.WHITE);
+							textFood.setTextColor(Color.WHITE);
+							textBook.setTextColor(Color.rgb(255, 187, 0));
+							textETC.setTextColor(Color.WHITE);
+							choicedAll = false;
+							choicedSchool = false;
+							choicedFood = false;
+							choicedBook = true;
+							choicedETC = false;
+						}
+					}
+				}
+			});
+
+			textETC.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+
+					if(multiChoice == true){
+						if (choicedETC == false) {
+							textETC.setTextColor(Color.rgb(255, 187, 0));
+							choicedETC = true;
+
+							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+								textAll.setTextColor(Color.rgb(255, 187, 0));
+						}
+						else {
+							textETC.setTextColor(Color.WHITE);
+							choicedETC = false;
+							textAll.setTextColor(Color.WHITE);
+							choicedAll = false;
+						}
+					}
+					else {
+						//to do
+						if(choicedETC == false) {
+							textAll.setTextColor(Color.WHITE);
+							textSchool.setTextColor(Color.WHITE);
+							textFood.setTextColor(Color.WHITE);
+							textBook.setTextColor(Color.WHITE);
+							textETC.setTextColor(Color.rgb(255, 187, 0));
+							choicedAll = false;
+							choicedSchool = false;
+							choicedFood = false;
+							choicedBook = false;
+							choicedETC = true;
+						}
+					}
+				}
+			});
+
 		} catch (Exception ex) {
 			doError(ex);
 		}
+
 	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+
+		MenuInflater mInflater = this.getMenuInflater();
+		mInflater.inflate(R.menu.option, menu);
+		if(multiChoice == true)
+			menu.findItem(R.id.option_onMulti).setChecked(true);
+		else
+			menu.findItem(R.id.option_onMulti).setChecked(false);
+		menu.setHeaderTitle("설정");
+	}
+
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		super.onContextItemSelected(item);
+
+		if(item.getItemId() == R.id.option_onMulti){
+			if(multiChoice == false)
+				multiChoice = true;
+			else
+				multiChoice = false;
+			return true;
+		}else if(item.getItemId() == R.id.option_onMap){
+			return true;
+		}else if(item.getItemId() == R.id.option_markerInit){
+			return true;
+		}else if(item.getItemId() == R.id.option_info){
+			return true;
+		}
+
+		return false;
+	}
+
 
 	private void setPlusMenu(boolean mflag){
 		if(mflag == false) {
@@ -321,7 +542,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			if (data.getBooleanExtra("RefreshScreen", false)) {
 				Log.d(TAG + " WorkFlow",
 						"MixView - Received Refresh Screen Request .. about to refresh");
-				repaint();
+				//repaint();
 				refresh();
 				//refreshDownload();
 			}
@@ -342,7 +563,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			getMixViewData().getMixContext().doResume(this);
 
 			repaint();
-			//getDataView().doStart();
+			getDataView().doStart();
 			//getDataView().clearEvents();
 
 			getMixViewData().getMixContext().getDataSourceManager().refreshDataSources();
@@ -482,16 +703,16 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		maintainZoomBar();
 	}
 	
-	/* ********* Operators ***********/ 
 
 	public void repaint() {
 		//clear stored data
 		getDataView().clearEvents();
 		setDataView(null); //It's smelly code, but enforce garbage collector 
 							//to release data.
-		setDataView(new DataView(mixViewData.getMixContext()));
 		setdWindow(new PaintScreen());
-		//setZoomLevel(); //@TODO Caller has to set the zoom. This function repaints only.
+		setDataView(new DataView(mixViewData.getMixContext()));
+
+		setZoomLevel(); //@TODO Caller has to set the zoom. This function repaints only.
 	}
 	
 	/**
@@ -569,6 +790,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				//TODO improve
 				try {
 					maintainCamera();
+					maintainMenu();
 					maintainAugmentR();
 					repaint();
 					setZoomLevel();

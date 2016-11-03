@@ -18,6 +18,7 @@
  */
 package org.mixare;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import org.mixare.data.convert.GachonDataProcessor;
@@ -75,9 +76,10 @@ public class MixState implements MixStateInterface{
 
 					if(temp != null) {
 						// 액티비티 넘기기
-						Intent intent = new Intent(mixcontext, POIActivity.class);
+						Intent intent = new Intent(mixcontext.getActualMixView(), POIActivity.class);
 						intent.putExtra("json", temp);
-						mixcontext.startActivity(intent);
+						//mixcontext.startActivity(intent);
+						(mixcontext.getActualMixView()).startActivityForResult(intent,42);
 					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
