@@ -4,12 +4,12 @@
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_edit.png"
     },
     {
-        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\arena.png",
-        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\arena.png"
-    },
-    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_map.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_map.png"
+    },
+    {
+        "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\arena.png",
+        "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\arena.png"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\gachon_test.jpg",

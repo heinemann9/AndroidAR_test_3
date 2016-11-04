@@ -37,18 +37,6 @@ public class MainActivity extends Activity {
     final static String TAG = "PAAR";
     SensorManager sensorManager;
 
-    CheckBox cbMulti;
-    Button btnMapOn,btnMarkerInit,btnInfo;
-    ImageButton img1,img2;
-    ImageButton menu_img1,menu_img2;
-    ImageButton edit_img1,edit_img2;
-    RelativeLayout menu_relative1,menu_relative2;
-    RelativeLayout edit_relative, main_relative;
-    EditText search;
-    TextView textAll,textSchool,textFood,textBook,textETC,textOption;
-
-    boolean menu_flag,edit_flag;
-
     int orientationSensor;
     float headingAngle;
     float pitchAngle;
@@ -73,110 +61,8 @@ public class MainActivity extends Activity {
         // 위 소스 아래부분에  splash.class 호출
         startActivity(new Intent(this, Splash.class));
 
-        startActivity(new Intent(getBaseContext(), org.mixare.MixView.class));
 
         finish();
-        /*
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER, 2000, 2, locationListener);
-
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        orientationSensor = Sensor.TYPE_ORIENTATION;
-        accelerometerSensor = Sensor.TYPE_ACCELEROMETER;
-        sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(orientationSensor), SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(accelerometerSensor), SensorManager.SENSOR_DELAY_NORMAL);
-
-        inPreview = false;
-
-        cameraPreview = (SurfaceView) findViewById(R.id.cameraPreview);
-        previewHolder = cameraPreview.getHolder();
-        previewHolder.addCallback(surfaceCallback);
-        previewHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-
-        img1 = (ImageButton)findViewById(R.id.img1);
-        img2 = (ImageButton)findViewById(R.id.img2);
-
-        menu_img1 = (ImageButton)findViewById(R.id.menu_img1);
-        menu_img2 = (ImageButton)findViewById(R.id.menu_img2);
-
-        menu_relative1 = (RelativeLayout)findViewById(R.id.menu_relative1);
-        menu_relative2 = (RelativeLayout)findViewById(R.id.menu_relative2);
-
-        edit_img1 = (ImageButton)findViewById(R.id.edit_img1);
-        edit_img2 = (ImageButton)findViewById(R.id.edit_img2);
-
-        main_relative = (RelativeLayout)findViewById(R.id.main_relative);
-        edit_relative = (RelativeLayout)findViewById(R.id.edit_relative);
-
-        search = (EditText)findViewById(R.id.edit_search);
-
-        menu_flag = false;
-        edit_flag = false;
-
-        textAll = (TextView) findViewById(R.id.textAll);
-        textSchool = (TextView) findViewById(R.id.textSchool);
-        textFood = (TextView) findViewById(R.id.textFood);
-        textBook = (TextView) findViewById(R.id.textBook);
-        textETC = (TextView) findViewById(R.id.textETC);
-        textOption = (TextView) findViewById(R.id.textOption);
-
-        registerForContextMenu(textOption);
-
-
-        // 메뉴 클릭시 ..
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setPlusMenu(menu_flag);
-            }
-        });
-
-        menu_img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setPlusMenu(menu_flag);
-            }
-        });
-
-        // 검색 클릭시 ..
-        img2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setSearchMenu(edit_flag);
-            }
-        });
-
-        menu_img2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setPlusMenu(edit_flag);
-            }
-        });
-
-        edit_img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setSearchMenu(edit_flag);
-            }
-        });
-
-        textOption.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openContextMenu(textOption);
-            }
-        });
-        */
     }
 
     @Override
@@ -188,36 +74,6 @@ public class MainActivity extends Activity {
 
     }
 
-    private void setPlusMenu(boolean mflag){
-        if(mflag == false) {
-            img1.setVisibility(View.GONE);
-            menu_relative1.setVisibility(View.VISIBLE);
-            menu_relative2.setVisibility(View.VISIBLE);
-            menu_flag = true;
-        }else if(mflag == true){
-            img1.setVisibility(View.VISIBLE);
-            menu_relative1.setVisibility(View.GONE);
-            menu_relative2.setVisibility(View.GONE);
-            menu_flag = false;
-        }
-    }
-
-    private void setSearchMenu(boolean sflag){
-        if(sflag == false) {
-            img1.setVisibility(View.GONE);
-            edit_relative.setVisibility(View.VISIBLE);
-            main_relative.setVisibility(View.GONE);
-
-            edit_flag = true;
-        }else if(sflag == true){
-            img1.setVisibility(View.VISIBLE);
-            edit_relative.setVisibility(View.GONE);
-            main_relative.setVisibility(View.VISIBLE);
-
-            edit_flag = false;
-        }
-    }
-
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         super.onMenuItemSelected(featureId, item);
@@ -225,6 +81,7 @@ public class MainActivity extends Activity {
         return true;
     }
 
+/*
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
@@ -284,10 +141,11 @@ public class MainActivity extends Activity {
 
         }
     };
-
+*/
     @Override
     protected void onResume() {
         super.onResume();
+        /*
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -302,10 +160,12 @@ public class MainActivity extends Activity {
         sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(orientationSensor), SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(accelerometerSensor), SensorManager.SENSOR_DELAY_NORMAL);
         camera = android.hardware.Camera.open();
+        */
     }
 
     @Override
     protected void onPause() {
+        /*
         if (inPreview) {
             camera.stopPreview();
         }
@@ -326,8 +186,9 @@ public class MainActivity extends Activity {
         inPreview = false;
 
         super.onPause();
+        */
     }
-
+    /*
     private android.hardware.Camera.Size getBestPreviewSize(int width, int height, android.hardware.Camera.Parameters parameters) {
         android.hardware.Camera.Size result=null;
 
@@ -378,4 +239,5 @@ public class MainActivity extends Activity {
 
         }
     };
+    */
 }

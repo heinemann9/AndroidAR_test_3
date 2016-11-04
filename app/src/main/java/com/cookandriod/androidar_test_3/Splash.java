@@ -22,6 +22,7 @@ public class Splash extends Activity {
             @Override
             public void run() {
 
+                startActivity(new Intent(getBaseContext(), org.mixare.MixView.class));
                 finish();       // 3 초후 이미지를 닫아버림
             }
         }, 3000);
