@@ -55,6 +55,11 @@ public class POIMarker extends LocalMarker {
 
 	}
 
+	public POIMarker(String title, double latitude, double longitude, double altitude,String category,int type, String URL){
+		super(title,latitude, longitude, altitude, category, type, URL);
+
+	}
+
 	@Override
 	public void update(Location curGPSFix) {
 		super.update(curGPSFix);

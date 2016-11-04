@@ -81,12 +81,39 @@ public class POIActivity extends Activity {
                     task.execute(url[i]);
                 }
                 // 그 외 data 받아오기
+
+                if(c.getString(TAG_NAME) == "null") {
+                    name.setText("정보없음");
+                }else{
+                    name.setText(c.getString(TAG_NAME));
+                }
+                if(c.getString(TAG_Structure_Info) == "null") {
+                    structure_intro.setText("정보없음");
+                }else{
+                    structure_intro.setText(c.getString(TAG_Structure_Info));
+                }
+                if(c.getString(TAG_Tel_Info) == "null") {
+                    tel_info.setText("정보없음");
+                }else{
+                    tel_info.setText(c.getString(TAG_Tel_Info));
+                }
+                if(c.getString(TAG_Floor_Info) == "null") {
+                    floor_info.setText("정보없음");
+                }else{
+                    floor_info.setText(c.getString(TAG_Floor_Info));
+                }
+                if(c.getString(TAG_Major_Info) == "null") {
+                    major_info.setText("정보없음");
+                }else{
+                    major_info.setText(c.getString(TAG_Major_Info));
+                }
+                /*
                 name.setText(c.getString(TAG_NAME));
                 structure_intro.setText(c.getString(TAG_Structure_Info));
                 tel_info.setText(c.getString(TAG_Tel_Info));
                 floor_info.setText(c.getString(TAG_Floor_Info));
                 major_info.setText(c.getString(TAG_Major_Info));
-
+                */
             }
 
         } catch (JSONException e) {

@@ -33,7 +33,7 @@ import java.util.TimerTask;
 
 import org.mixare.data.DataHandler;
 import org.mixare.data.DataSource;
-import org.mixare.gui.RadarPoints;
+//import org.mixare.gui.RadarPoints;
 import org.mixare.lib.MixUtils;
 import org.mixare.lib.gui.PaintScreen;
 import org.mixare.lib.gui.ScreenLine;
@@ -91,7 +91,7 @@ public class DataView {
 
 	private ArrayList<UIEvent> uiEvents = new ArrayList<UIEvent>();
 
-	private RadarPoints radarPoints = new RadarPoints();
+	//private RadarPoints radarPoints = new RadarPoints();
 	private ScreenLine lrl = new ScreenLine();
 	private ScreenLine rrl = new ScreenLine();
 	private float rx = 10, ry = 20;
@@ -158,13 +158,14 @@ public class DataView {
 
 			cam = new Camera(width, height, true);
 			cam.setViewAngle(Camera.DEFAULT_VIEW_ANGLE);
-
+			/*
 			lrl.set(0, -RadarPoints.RADIUS);
 			lrl.rotate(Camera.DEFAULT_VIEW_ANGLE / 2);
 			lrl.add(rx + RadarPoints.RADIUS, ry + RadarPoints.RADIUS);
 			rrl.set(0, -RadarPoints.RADIUS);
 			rrl.rotate(-Camera.DEFAULT_VIEW_ANGLE / 2);
 			rrl.add(rx + RadarPoints.RADIUS, ry + RadarPoints.RADIUS);
+			*/
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -354,7 +355,7 @@ public class DataView {
 			dirTxt = getContext().getString(R.string.W);
 		else if (range == 13 || range == 14)
 			dirTxt = getContext().getString(R.string.NW);
-
+		/*
 		radarPoints.view = this;
 		dw.paintObj(radarPoints, rx, ry, -state.getCurBearing(), 1);
 		dw.setFill(false);
@@ -370,6 +371,7 @@ public class DataView {
 				+ RadarPoints.RADIUS, ry + RadarPoints.RADIUS * 2 - 10, false);
 		radarText(dw, "" + bearing + ((char) 176) + " " + dirTxt, rx
 				+ RadarPoints.RADIUS, ry - 5, true);
+		*/
 	}
 
 	private void handleKeyEvent(KeyEvent evt) {

@@ -41,6 +41,7 @@ public class GachonDataProcessor extends DataHandler implements DataProcessor{
     private static final String TAG_Altitude = "Altitude";
     private static final String TAG_Latitude = "Latitude";
     private static final String TAG_Longitude = "Longitude";
+    private static final String TAG_Category = "category";
 
     String temp,json_temp = null, uri = "";
     JSONArray arr;
@@ -102,6 +103,7 @@ public class GachonDataProcessor extends DataHandler implements DataProcessor{
                         c.getDouble(TAG_Latitude),
                         c.getDouble(TAG_Longitude),
                         c.getDouble(TAG_Altitude),
+                        c.getString(TAG_Category),
                         6,
                         "http://heinemann.cafe24.com/getNamePOIData.php?name="+c.getString(TAG_NAME));
                 markers.add(ma);

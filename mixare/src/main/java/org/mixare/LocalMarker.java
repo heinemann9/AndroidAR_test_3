@@ -50,6 +50,7 @@ public abstract class LocalMarker implements Marker {
 
 	private String ID;
 	protected String title;
+	protected String category;
 	protected boolean underline = false;
 	private String URL;
 	protected PhysicalPlace mGeoLoc;
@@ -81,6 +82,19 @@ public abstract class LocalMarker implements Marker {
 		super();
 
 		this.title = title;
+		this.mGeoLoc = new PhysicalPlace(latitude,longitude,altitude);
+		if (link != null && link.length() > 0) {
+			URL = "webpage:" + URLDecoder.decode(link);
+			this.underline = true;
+		}
+		this.ID = "##" + type + "##" + title;
+	}
+
+	public LocalMarker(String title, double latitude, double longitude, double altitude,String category,int type,String link){
+		super();
+
+		this.title = title;
+		this.category = category;
 		this.mGeoLoc = new PhysicalPlace(latitude,longitude,altitude);
 		if (link != null && link.length() > 0) {
 			URL = "webpage:" + URLDecoder.decode(link);
@@ -211,8 +225,7 @@ public abstract class LocalMarker implements Marker {
 	// 기존 draw
 	public void draw(PaintScreen dw) {
 
-		drawCircle(dw);
-
+		//drawCircle(dw);
 		drawTextBlock(dw);
 	}
 

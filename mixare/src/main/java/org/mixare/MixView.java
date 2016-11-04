@@ -82,6 +82,11 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	private CameraSurface camScreen;
 	private AugmentedView augScreen;
 
+	// 메뉴 인플레이터와 뷰
+	LayoutInflater vi;
+	View v;
+	MenuInflater mInflater;
+
 	private boolean isInited;
 	private static PaintScreen dWindow;
 	private static DataView dataView;
@@ -131,9 +136,9 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 			maintainCamera();
+			maintainMenu();
 			maintainAugmentR();
 			maintainZoomBar();
-			maintainMenu();
 
 			
 			if (!isInited) {
@@ -157,264 +162,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			}
 
-			// 메뉴
-			img1 = (ImageButton)findViewById(R.id.img1);
-			img2 = (ImageButton)findViewById(R.id.img2);
 
-			menu_img1 = (ImageButton)findViewById(R.id.menu_img1);
-			menu_img2 = (ImageButton)findViewById(R.id.menu_img2);
-
-			menu_relative1 = (RelativeLayout)findViewById(R.id.menu_relative1);
-			menu_relative2 = (RelativeLayout)findViewById(R.id.menu_relative2);
-
-			edit_img1 = (ImageButton)findViewById(R.id.edit_img1);
-			edit_img2 = (ImageButton)findViewById(R.id.edit_img2);
-
-			main_relative = (RelativeLayout)findViewById(R.id.main_relative);
-			edit_relative = (RelativeLayout)findViewById(R.id.edit_relative);
-
-			search = (EditText)findViewById(R.id.edit_search);
-
-			menu_flag = false;
-			edit_flag = false;
-			multiChoice = false;
-			choicedAll = false;
-			choicedSchool = false;
-			choicedFood = false;
-			choicedBook = false;
-			choicedETC = false;
-
-			textAll = (TextView) findViewById(R.id.textAll);
-			textSchool = (TextView) findViewById(R.id.textSchool);
-			textFood = (TextView) findViewById(R.id.textFood);
-			textBook = (TextView) findViewById(R.id.textBook);
-			textETC = (TextView) findViewById(R.id.textETC);
-			textOption = (TextView) findViewById(R.id.textOption);
-
-			registerForContextMenu(textOption);
-
-
-			// 메뉴 클릭시 ..
-			img1.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					setPlusMenu(menu_flag);
-				}
-			});
-
-			menu_img1.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					setPlusMenu(menu_flag);
-				}
-			});
-
-			// 검색 클릭시 ..
-			img2.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					setSearchMenu(edit_flag);
-				}
-			});
-
-			menu_img2.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					setPlusMenu(edit_flag);
-				}
-			});
-
-			edit_img1.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					setSearchMenu(edit_flag);
-				}
-			});
-
-			textOption.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					openContextMenu(textOption);
-				}
-			});
-
-			textAll.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if (choicedAll == false) {
-						textAll.setTextColor(Color.rgb(255, 187, 0));
-						textSchool.setTextColor(Color.rgb(255, 187, 0));
-						textFood.setTextColor(Color.rgb(255, 187, 0));
-						textBook.setTextColor(Color.rgb(255, 187, 0));
-						textETC.setTextColor(Color.rgb(255, 187, 0));
-						choicedAll = true;
-						choicedSchool = true;
-						choicedFood = true;
-						choicedBook = true;
-						choicedETC = true;
-					} else {
-						textAll.setTextColor(Color.WHITE);
-						textSchool.setTextColor(Color.rgb(255, 187, 0));
-						textFood.setTextColor(Color.WHITE);
-						textBook.setTextColor(Color.WHITE);
-						textETC.setTextColor(Color.WHITE);
-						choicedAll = false;
-						choicedSchool = true;
-						choicedFood = false;
-						choicedBook = false;
-						choicedETC = false;
-					}
-
-				}
-			});
-
-			textSchool.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-
-					if(multiChoice == true){
-						if (choicedSchool == false) {
-							textSchool.setTextColor(Color.rgb(255, 187, 0));
-							choicedSchool = true;
-
-							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
-								textAll.setTextColor(Color.rgb(255, 187, 0));
-						}
-						else {
-							textSchool.setTextColor(Color.WHITE);
-							choicedSchool = false;
-							textAll.setTextColor(Color.WHITE);
-							choicedAll = false;
-						}
-					}
-					else {
-						//to do
-						if(choicedSchool == false) {
-							textAll.setTextColor(Color.WHITE);
-							textSchool.setTextColor(Color.rgb(255, 187, 0));
-							textFood.setTextColor(Color.WHITE);
-							textBook.setTextColor(Color.WHITE);
-							textETC.setTextColor(Color.WHITE);
-							choicedAll = false;
-							choicedSchool = true;
-							choicedFood = false;
-							choicedBook = false;
-							choicedETC = false;
-						}
-					}
-				}
-			});
-
-			textFood.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-
-					if(multiChoice == true){
-						if (choicedFood == false) {
-							textFood.setTextColor(Color.rgb(255, 187, 0));
-							choicedFood = true;
-
-							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
-								textAll.setTextColor(Color.rgb(255, 187, 0));
-						}
-						else {
-							textFood.setTextColor(Color.WHITE);
-							choicedFood = false;
-							textAll.setTextColor(Color.WHITE);
-							choicedAll = false;
-						}
-					}
-					else {
-						//to do
-						if(choicedFood == false) {
-							textAll.setTextColor(Color.WHITE);
-							textSchool.setTextColor(Color.WHITE);
-							textFood.setTextColor(Color.rgb(255, 187, 0));
-							textBook.setTextColor(Color.WHITE);
-							textETC.setTextColor(Color.WHITE);
-							choicedAll = false;
-							choicedSchool = false;
-							choicedFood = true;
-							choicedBook = false;
-							choicedETC = false;
-						}
-					}
-				}
-			});
-
-			textBook.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-
-					if(multiChoice == true){
-						if (choicedBook == false) {
-							textBook.setTextColor(Color.rgb(255, 187, 0));
-							choicedBook = true;
-
-							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
-								textAll.setTextColor(Color.rgb(255, 187, 0));
-						}
-						else {
-							textBook.setTextColor(Color.WHITE);
-							choicedBook = false;
-							textAll.setTextColor(Color.WHITE);
-							choicedAll = false;
-						}
-					}
-					else {
-						//to do
-						if(choicedBook == false) {
-							textAll.setTextColor(Color.WHITE);
-							textSchool.setTextColor(Color.WHITE);
-							textFood.setTextColor(Color.WHITE);
-							textBook.setTextColor(Color.rgb(255, 187, 0));
-							textETC.setTextColor(Color.WHITE);
-							choicedAll = false;
-							choicedSchool = false;
-							choicedFood = false;
-							choicedBook = true;
-							choicedETC = false;
-						}
-					}
-				}
-			});
-
-			textETC.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-
-					if(multiChoice == true){
-						if (choicedETC == false) {
-							textETC.setTextColor(Color.rgb(255, 187, 0));
-							choicedETC = true;
-
-							if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
-								textAll.setTextColor(Color.rgb(255, 187, 0));
-						}
-						else {
-							textETC.setTextColor(Color.WHITE);
-							choicedETC = false;
-							textAll.setTextColor(Color.WHITE);
-							choicedAll = false;
-						}
-					}
-					else {
-						//to do
-						if(choicedETC == false) {
-							textAll.setTextColor(Color.WHITE);
-							textSchool.setTextColor(Color.WHITE);
-							textFood.setTextColor(Color.WHITE);
-							textBook.setTextColor(Color.WHITE);
-							textETC.setTextColor(Color.rgb(255, 187, 0));
-							choicedAll = false;
-							choicedSchool = false;
-							choicedFood = false;
-							choicedBook = false;
-							choicedETC = true;
-						}
-					}
-				}
-			});
 
 		} catch (Exception ex) {
 			doError(ex);
@@ -426,7 +174,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 
-		MenuInflater mInflater = this.getMenuInflater();
+		mInflater = this.getMenuInflater();
 		mInflater.inflate(R.menu.option, menu);
 		if(multiChoice == true)
 			menu.findItem(R.id.option_onMulti).setChecked(true);
@@ -561,6 +309,8 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			killOnError();
 			getMixViewData().getMixContext().doResume(this);
+
+			maintainMenu();
 
 			repaint();
 			getDataView().doStart();
@@ -748,9 +498,268 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	}
 
 	private void maintainMenu(){
-		LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View v  = vi.inflate(R.layout.activity_main, null);
-		this.addContentView(v, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		v  = vi.inflate(R.layout.activity_main, null);
+		addContentView(v, new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+
+		// 메뉴
+		img1 = (ImageButton)findViewById(R.id.img1);
+		img2 = (ImageButton)findViewById(R.id.img2);
+
+		menu_img1 = (ImageButton)findViewById(R.id.menu_img1);
+		menu_img2 = (ImageButton)findViewById(R.id.menu_img2);
+
+		menu_relative1 = (RelativeLayout)findViewById(R.id.menu_relative1);
+		menu_relative2 = (RelativeLayout)findViewById(R.id.menu_relative2);
+
+		edit_img1 = (ImageButton)findViewById(R.id.edit_img1);
+		edit_img2 = (ImageButton)findViewById(R.id.edit_img2);
+
+		main_relative = (RelativeLayout)findViewById(R.id.main_relative);
+		edit_relative = (RelativeLayout)findViewById(R.id.edit_relative);
+
+		search = (EditText)findViewById(R.id.edit_search);
+
+		menu_flag = false;
+		edit_flag = false;
+		multiChoice = false;
+		choicedAll = false;
+		choicedSchool = false;
+		choicedFood = false;
+		choicedBook = false;
+		choicedETC = false;
+
+		textAll = (TextView) findViewById(R.id.textAll);
+		textSchool = (TextView) findViewById(R.id.textSchool);
+		textFood = (TextView) findViewById(R.id.textFood);
+		textBook = (TextView) findViewById(R.id.textBook);
+		textETC = (TextView) findViewById(R.id.textETC);
+		textOption = (TextView) findViewById(R.id.textOption);
+
+		registerForContextMenu(textOption);
+
+
+		// 메뉴 클릭시 ..
+		img1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				setPlusMenu(menu_flag);
+			}
+		});
+
+		menu_img1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				setPlusMenu(menu_flag);
+			}
+		});
+
+		// 검색 클릭시 ..
+		img2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				setSearchMenu(edit_flag);
+			}
+		});
+
+		menu_img2.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				setPlusMenu(edit_flag);
+			}
+		});
+
+		edit_img1.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				setSearchMenu(edit_flag);
+			}
+		});
+
+		textOption.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				openContextMenu(textOption);
+			}
+		});
+
+		textAll.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (choicedAll == false) {
+					textAll.setTextColor(Color.rgb(255, 187, 0));
+					textSchool.setTextColor(Color.rgb(255, 187, 0));
+					textFood.setTextColor(Color.rgb(255, 187, 0));
+					textBook.setTextColor(Color.rgb(255, 187, 0));
+					textETC.setTextColor(Color.rgb(255, 187, 0));
+					choicedAll = true;
+					choicedSchool = true;
+					choicedFood = true;
+					choicedBook = true;
+					choicedETC = true;
+				} else {
+					textAll.setTextColor(Color.WHITE);
+					textSchool.setTextColor(Color.rgb(255, 187, 0));
+					textFood.setTextColor(Color.WHITE);
+					textBook.setTextColor(Color.WHITE);
+					textETC.setTextColor(Color.WHITE);
+					choicedAll = false;
+					choicedSchool = true;
+					choicedFood = false;
+					choicedBook = false;
+					choicedETC = false;
+				}
+
+			}
+		});
+
+		textSchool.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				if(multiChoice == true){
+					if (choicedSchool == false) {
+						textSchool.setTextColor(Color.rgb(255, 187, 0));
+						choicedSchool = true;
+
+						if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+							textAll.setTextColor(Color.rgb(255, 187, 0));
+					}
+					else {
+						textSchool.setTextColor(Color.WHITE);
+						choicedSchool = false;
+						textAll.setTextColor(Color.WHITE);
+						choicedAll = false;
+					}
+				}
+				else {
+					//to do
+					if(choicedSchool == false) {
+						textAll.setTextColor(Color.WHITE);
+						textSchool.setTextColor(Color.rgb(255, 187, 0));
+						textFood.setTextColor(Color.WHITE);
+						textBook.setTextColor(Color.WHITE);
+						textETC.setTextColor(Color.WHITE);
+						choicedAll = false;
+						choicedSchool = true;
+						choicedFood = false;
+						choicedBook = false;
+						choicedETC = false;
+					}
+				}
+			}
+		});
+
+		textFood.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				if(multiChoice == true){
+					if (choicedFood == false) {
+						textFood.setTextColor(Color.rgb(255, 187, 0));
+						choicedFood = true;
+
+						if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+							textAll.setTextColor(Color.rgb(255, 187, 0));
+					}
+					else {
+						textFood.setTextColor(Color.WHITE);
+						choicedFood = false;
+						textAll.setTextColor(Color.WHITE);
+						choicedAll = false;
+					}
+				}
+				else {
+					//to do
+					if(choicedFood == false) {
+						textAll.setTextColor(Color.WHITE);
+						textSchool.setTextColor(Color.WHITE);
+						textFood.setTextColor(Color.rgb(255, 187, 0));
+						textBook.setTextColor(Color.WHITE);
+						textETC.setTextColor(Color.WHITE);
+						choicedAll = false;
+						choicedSchool = false;
+						choicedFood = true;
+						choicedBook = false;
+						choicedETC = false;
+					}
+				}
+			}
+		});
+
+		textBook.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				if(multiChoice == true){
+					if (choicedBook == false) {
+						textBook.setTextColor(Color.rgb(255, 187, 0));
+						choicedBook = true;
+
+						if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+							textAll.setTextColor(Color.rgb(255, 187, 0));
+					}
+					else {
+						textBook.setTextColor(Color.WHITE);
+						choicedBook = false;
+						textAll.setTextColor(Color.WHITE);
+						choicedAll = false;
+					}
+				}
+				else {
+					//to do
+					if(choicedBook == false) {
+						textAll.setTextColor(Color.WHITE);
+						textSchool.setTextColor(Color.WHITE);
+						textFood.setTextColor(Color.WHITE);
+						textBook.setTextColor(Color.rgb(255, 187, 0));
+						textETC.setTextColor(Color.WHITE);
+						choicedAll = false;
+						choicedSchool = false;
+						choicedFood = false;
+						choicedBook = true;
+						choicedETC = false;
+					}
+				}
+			}
+		});
+
+		textETC.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				if(multiChoice == true){
+					if (choicedETC == false) {
+						textETC.setTextColor(Color.rgb(255, 187, 0));
+						choicedETC = true;
+
+						if(choicedSchool == true && choicedFood == true && choicedBook == true && choicedETC == true)
+							textAll.setTextColor(Color.rgb(255, 187, 0));
+					}
+					else {
+						textETC.setTextColor(Color.WHITE);
+						choicedETC = false;
+						textAll.setTextColor(Color.WHITE);
+						choicedAll = false;
+					}
+				}
+				else {
+					//to do
+					if(choicedETC == false) {
+						textAll.setTextColor(Color.WHITE);
+						textSchool.setTextColor(Color.WHITE);
+						textFood.setTextColor(Color.WHITE);
+						textBook.setTextColor(Color.WHITE);
+						textETC.setTextColor(Color.rgb(255, 187, 0));
+						choicedAll = false;
+						choicedSchool = false;
+						choicedFood = false;
+						choicedBook = false;
+						choicedETC = true;
+					}
+				}
+			}
+		});
 	}
 	
 	/**
