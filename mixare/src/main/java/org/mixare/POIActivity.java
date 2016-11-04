@@ -153,6 +153,8 @@ public class POIActivity extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        Intent intent = new Intent(POIActivity.this,MixView.class);
+        startActivity(intent);
         finish();
     }
 }

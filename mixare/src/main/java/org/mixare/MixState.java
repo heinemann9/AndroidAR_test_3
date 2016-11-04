@@ -80,6 +80,7 @@ public class MixState implements MixStateInterface{
 						intent.putExtra("json", temp);
 						//mixcontext.startActivity(intent);
 						(mixcontext.getActualMixView()).startActivityForResult(intent,42);
+						(mixcontext.getActualMixView()).finish();
 					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
