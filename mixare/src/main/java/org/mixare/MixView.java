@@ -68,6 +68,7 @@ import org.mixare.R.drawable;
 import org.mixare.data.DataHandler;
 import org.mixare.data.DataSourceList;
 import org.mixare.data.DataSourceStorage;
+import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.gui.PaintScreen;
 import org.mixare.lib.marker.Marker;
 import org.mixare.lib.render.Matrix;
@@ -140,7 +141,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			maintainAugmentR();
 			maintainZoomBar();
 
-			
 			if (!isInited) {
 				//getMixViewData().setMixContext(new MixContext(this));
 				//getMixViewData().getMixContext().setDownloadManager(new DownloadManager(mixViewData.getMixContext()));
@@ -593,6 +593,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			}
 		});
 
+		// 메뉴 전체
 		textAll.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -620,9 +621,28 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 					choicedETC = false;
 				}
 
+				// 모든 Marker를 받아오는 작업 수행
+				DataHandler dh = getDataView().getDataHandler();
+				if (!getDataView().isFrozen()) {
+					MixListView.originalMarkerList = dh.getMarkerList();
+					MixMap.originalMarkerList = dh.getMarkerList();
+				}
+
+				// 카테고리 값에 따른 Marker 띄우기
+				if (dh.getMarkerCount() > 0) {
+					for (int i = 0; i < dh.getMarkerCount(); i++) {
+						Marker ma = dh.getMarker(i);
+						if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
+							ma.draw(getdWindow(), getMixViewData().getMixContext());	// 마커 draw하는 부분
+						}
+						//if (ma.getCategory().equals("학교이름")) {
+						//}
+					}
+				}
 			}
 		});
 
+		// 메뉴 학교건물
 		textSchool.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -658,6 +678,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			}
 		});
 
+		// 메뉴 음식
 		textFood.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -690,9 +711,31 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 						choicedBook = false;
 						choicedETC = false;
 				}
+
+				// 모든 Marker를 받아오는 작업 수행
+				DataHandler dh = getDataView().getDataHandler();
+				if (!getDataView().isFrozen()) {
+					MixListView.originalMarkerList = dh.getMarkerList();
+					MixMap.originalMarkerList = dh.getMarkerList();
+				}
+
+				// 카테고리 값에 따른 Marker 띄우기
+				// 메모리 오류 Fatal signal 11 (SIGSEGV), code 1, fault addr 0x1f0 in tid 10699 (ndroidar_test_3)
+				if (dh.getMarkerCount() > 0) {
+					for (int i = 0; i < dh.getMarkerCount(); i++) {
+						Marker ma = dh.getMarker(i);
+						if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
+							if (ma.getCategory().equals("음식")) {
+								ma.draw(getdWindow(),getMixViewData().getMixContext());	// 마커 draw하는 부분
+							}
+						}
+
+					}
+				}
 			}
 		});
 
+		// 메뉴 문구, 서적
 		textBook.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -728,6 +771,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			}
 		});
 
+		// 메뉴 기타
 		textETC.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
