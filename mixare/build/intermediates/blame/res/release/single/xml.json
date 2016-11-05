@@ -6,5 +6,9 @@
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\xml\\searchable.xml",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\xml\\searchable.xml"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\xml\\searchable.xml",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\xml\\searchable.xml"
     }
 ]

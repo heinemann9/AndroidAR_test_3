@@ -82,4 +82,5 @@ public interface Marker extends Comparable<Marker>{
 	
 	void setExtras(String name, PrimitiveProperty primitiveProperty);
 
+	void draw(PaintScreen dw, MixContextInterface mixContext);
 }
