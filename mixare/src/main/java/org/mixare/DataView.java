@@ -249,7 +249,7 @@ public class DataView {
 				// ma.update(curFix);
 				if (!frozen)
 					ma.calcPaint(cam, addX, addY);
-				ma.draw(dw);	// 마커 draw하는 부분
+				ma.draw(dw,mixContext);	// 마커 draw하는 부분
 			}
 		}
 

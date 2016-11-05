@@ -230,8 +230,8 @@ public abstract class LocalMarker implements Marker {
 	}
 
 	// 이상적 draw
-	public void draw(PaintScreen dw, MixContext ctx){
-		drawMarker(dw, ctx);
+	public void draw(PaintScreen dw, MixContextInterface ctx){
+		drawMarker(dw, (MixContext) ctx);
 		drawTextBlock(dw);
 	}
 
@@ -239,7 +239,7 @@ public abstract class LocalMarker implements Marker {
 	public void drawMarker(PaintScreen dw, MixContext ctx) {
 		if (isVisible) {
 			Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.building);
-			dw.paintBitmap(bitmap, cMarker.x, cMarker.y);
+			dw.paintBitmap(bitmap, cMarker.x - 30.f, cMarker.y - 60.0f);
 		}
 	}
 

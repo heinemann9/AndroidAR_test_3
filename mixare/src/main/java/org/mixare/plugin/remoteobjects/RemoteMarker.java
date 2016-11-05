@@ -96,6 +96,11 @@ public class RemoteMarker implements Marker{
 	}
 
 	@Override
+	public void draw(PaintScreen dw, MixContextInterface ctx) {
+
+	}
+
+	@Override
 	public double getAltitude() {
 		try {
 			return iMarkerService.getAltitude(markerName);
