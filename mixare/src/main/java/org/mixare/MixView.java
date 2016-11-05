@@ -159,7 +159,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			if(settings.getBoolean("firstAccess",false)==false){
 				firstAccess(settings);
-
 			}
 
 
@@ -310,7 +309,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			killOnError();
 			getMixViewData().getMixContext().doResume(this);
 
-			maintainMenu();
+			//maintainMenu();
 
 			repaint();
 			getDataView().doStart();

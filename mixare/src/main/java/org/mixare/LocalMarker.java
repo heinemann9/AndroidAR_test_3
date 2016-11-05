@@ -225,7 +225,7 @@ public abstract class LocalMarker implements Marker {
 	// 기존 draw
 	public void draw(PaintScreen dw) {
 
-		//drawCircle(dw);
+		drawCircle(dw);
 		drawTextBlock(dw);
 	}
 
