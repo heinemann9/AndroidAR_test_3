@@ -99,7 +99,7 @@ public final class R {
         public static int datasourcedetails=0x7f030001;
         public static int datasourcelist=0x7f030002;
         public static int main=0x7f030003;
-        public static int poi_info=0x7f030004;
+        public static int poi_info_school =0x7f030004;
         public static int splashscreen=0x7f030005;
         public static int webview=0x7f030006;
     }

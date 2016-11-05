@@ -12,15 +12,12 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.mixare.lib.marker.Marker;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by MJ on 2016-10-09.
@@ -49,7 +46,7 @@ public class POIActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.poi_info);
+        setContentView(R.layout.poi_info_school);
 
         name = (TextView) findViewById(R.id.POI_name);
         picture = (ImageView)findViewById(R.id.POI_picture);
