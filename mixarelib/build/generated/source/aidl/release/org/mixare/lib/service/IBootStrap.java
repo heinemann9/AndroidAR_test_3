@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\senior\\graduation_project\\AndroidAR_test_3\\mixarelib\\src\\main\\aidl\\org\\mixare\\lib\\service\\IBootStrap.aidl
+ * Original file: C:\\mobile_program\\AndroidAR_test_1\\mixarelib\\src\\main\\aidl\\org\\mixare\\lib\\service\\IBootStrap.aidl
  */
 package org.mixare.lib.service;
 public interface IBootStrap extends android.os.IInterface

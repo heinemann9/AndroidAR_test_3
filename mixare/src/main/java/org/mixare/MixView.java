@@ -190,9 +190,20 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		if(item.getItemId() == R.id.option_onMulti){
 			if(multiChoice == false)
 				multiChoice = true;
-			else
+			else {
 				multiChoice = false;
-			return true;
+				textAll.setTextColor(Color.WHITE);
+				textSchool.setTextColor(Color.rgb(255, 187, 0));
+				textFood.setTextColor(Color.WHITE);
+				textBook.setTextColor(Color.WHITE);
+				textETC.setTextColor(Color.WHITE);
+				choicedAll = false;
+				choicedSchool = true;
+				choicedFood = false;
+				choicedBook = false;
+				choicedETC = false;
+			}
+				return true;
 		}else if(item.getItemId() == R.id.option_onMap){
 			return true;
 		}else if(item.getItemId() == R.id.option_markerInit){
@@ -633,7 +644,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-					if(choicedSchool == false) {
 						textAll.setTextColor(Color.WHITE);
 						textSchool.setTextColor(Color.rgb(255, 187, 0));
 						textFood.setTextColor(Color.WHITE);
@@ -644,7 +654,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 						choicedFood = false;
 						choicedBook = false;
 						choicedETC = false;
-					}
 				}
 			}
 		});
@@ -670,7 +679,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-					if(choicedFood == false) {
 						textAll.setTextColor(Color.WHITE);
 						textSchool.setTextColor(Color.WHITE);
 						textFood.setTextColor(Color.rgb(255, 187, 0));
@@ -681,7 +689,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 						choicedFood = true;
 						choicedBook = false;
 						choicedETC = false;
-					}
 				}
 			}
 		});
@@ -707,7 +714,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-					if(choicedBook == false) {
 						textAll.setTextColor(Color.WHITE);
 						textSchool.setTextColor(Color.WHITE);
 						textFood.setTextColor(Color.WHITE);
@@ -718,7 +724,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 						choicedFood = false;
 						choicedBook = true;
 						choicedETC = false;
-					}
 				}
 			}
 		});
@@ -744,7 +749,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-					if(choicedETC == false) {
 						textAll.setTextColor(Color.WHITE);
 						textSchool.setTextColor(Color.WHITE);
 						textFood.setTextColor(Color.WHITE);
@@ -755,7 +759,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 						choicedFood = false;
 						choicedBook = false;
 						choicedETC = true;
-					}
 				}
 			}
 		});
