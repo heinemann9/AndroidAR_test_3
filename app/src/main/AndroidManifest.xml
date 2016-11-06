@@ -27,7 +27,9 @@
             </intent-filter>
         </activity>
         <!--<activity android:name=".Splash" android:theme="@android:style/Theme.NoTitleBar" />-->
-        <activity android:name=".Splash"  />
+        <!-- splash 가로 고정 -->
+        <activity android:name=".Splash"
+                  android:screenOrientation="landscape" />
     </application>
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.CAMERA"/>
