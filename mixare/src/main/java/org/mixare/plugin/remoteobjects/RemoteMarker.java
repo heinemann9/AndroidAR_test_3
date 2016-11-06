@@ -182,6 +182,11 @@ public class RemoteMarker implements Marker{
 	}
 
 	@Override
+	public String getCategory() {
+		return null;
+	}
+
+	@Override
 	public Label getTxtLab() {
 		try {
 			return iMarkerService.getTxtLab(markerName);

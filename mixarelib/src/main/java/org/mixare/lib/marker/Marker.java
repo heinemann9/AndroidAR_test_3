@@ -37,6 +37,8 @@ public interface Marker extends Comparable<Marker>{
 
 	String getTitle();
 
+	String getCategory();
+
 	String getURL();
 
 	double getLatitude();

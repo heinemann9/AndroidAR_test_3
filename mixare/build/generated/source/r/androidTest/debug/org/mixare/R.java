@@ -41,10 +41,10 @@ public final class R {
 		public static final int POI_name = 0x7f080026;
 		public static final int POI_picture = 0x7f080027;
 		public static final int ScrollView01 = 0x7f080018;
-		public static final int Structure_intro = 0x7f080029;
-		public static final int Structure_intro_name = 0x7f080028;
-		public static final int Tel_info = 0x7f08002b;
-		public static final int Tel_info_name = 0x7f08002a;
+		public static final int Structure_intro = 0x7f08002b;
+		public static final int Structure_intro_name = 0x7f08002a;
+		public static final int Tel_info = 0x7f080029;
+		public static final int Tel_info_name = 0x7f080028;
 		public static final int activity_article_close_button = 0x7f080033;
 		public static final int activity_article_frame_layout = 0x7f080031;
 		public static final int activity_article_web_view = 0x7f080032;
@@ -96,9 +96,12 @@ public final class R {
 		public static final int datasourcedetails = 0x7f030001;
 		public static final int datasourcelist = 0x7f030002;
 		public static final int main = 0x7f030003;
-		public static final int poi_info_school = 0x7f030004;
-		public static final int splashscreen = 0x7f030005;
-		public static final int webview = 0x7f030006;
+		public static final int poi_info_book = 0x7f030004;
+		public static final int poi_info_etc = 0x7f030005;
+		public static final int poi_info_food = 0x7f030006;
+		public static final int poi_info_school = 0x7f030007;
+		public static final int splashscreen = 0x7f030008;
+		public static final int webview = 0x7f030009;
 	}
 	public static final class menu {
 		public static final int option = 0x7f070000;

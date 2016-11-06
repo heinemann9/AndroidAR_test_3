@@ -18,23 +18,27 @@ public final class R {
     public static final class drawable {
         public static int arena=0x7f020000;
         public static int background=0x7f020001;
-        public static int building=0x7f020002;
-        public static int buzz=0x7f020003;
-        public static int gachon_test=0x7f020004;
-        public static int ic_launcher=0x7f020005;
-        public static int icon_datasource=0x7f020006;
-        public static int icon_edit=0x7f020007;
-        public static int icon_map=0x7f020008;
-        public static int icon_white=0x7f020009;
-        public static int icon_white1=0x7f02000a;
-        public static int loc_icon=0x7f02000b;
-        public static int logo=0x7f02000c;
-        public static int menu=0x7f02000d;
-        public static int menu1=0x7f02000e;
-        public static int osm=0x7f02000f;
-        public static int search=0x7f020010;
-        public static int twitter=0x7f020011;
-        public static int wikipedia=0x7f020012;
+        public static int book=0x7f020002;
+        public static int building=0x7f020003;
+        public static int buildings=0x7f020004;
+        public static int buzz=0x7f020005;
+        public static int etc=0x7f020006;
+        public static int food=0x7f020007;
+        public static int gachon_test=0x7f020008;
+        public static int ic_launcher=0x7f020009;
+        public static int icon_datasource=0x7f02000a;
+        public static int icon_edit=0x7f02000b;
+        public static int icon_map=0x7f02000c;
+        public static int icon_white=0x7f02000d;
+        public static int icon_white1=0x7f02000e;
+        public static int loc_icon=0x7f02000f;
+        public static int logo=0x7f020010;
+        public static int menu=0x7f020011;
+        public static int menu1=0x7f020012;
+        public static int osm=0x7f020013;
+        public static int search=0x7f020014;
+        public static int twitter=0x7f020015;
+        public static int wikipedia=0x7f020016;
     }
     public static final class id {
         public static int Floor_info=0x7f08002d;

@@ -124,6 +124,10 @@ public abstract class LocalMarker implements Marker {
 		return title;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+
 	public String getURL(){
 		return URL;
 	}
@@ -237,9 +241,21 @@ public abstract class LocalMarker implements Marker {
 
 	// 이상적인 drawMarker
 	public void drawMarker(PaintScreen dw, MixContext ctx) {
+		// 카테고리 이미지 추가
 		if (isVisible) {
-			Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.building);
-			dw.paintBitmap(bitmap, cMarker.x - 30.f, cMarker.y - 60.0f);
+			if(category.equals("학교건물")) {
+				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.buildings);
+				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+			}else if(category.equals("음식")){
+				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.food);
+				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+			}else if(category.equals("문구,서적")){
+				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.book);
+				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+			}else if(category.equals("기타")){
+				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.etc);
+				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+			}
 		}
 	}
 
@@ -272,11 +288,11 @@ public abstract class LocalMarker implements Marker {
 		double d = distance;
 		DecimalFormat df = new DecimalFormat("@#");
 		if(d<1000.0) {
-			textStr = title + " ("+ df.format(d) + "m)";			
+			textStr = title + "\n("+ df.format(d) + "m)";
 		}
 		else {
 			d=d/1000.0;
-			textStr = title + " (" + df.format(d) + "km)";
+			textStr = title + "\n(" + df.format(d) + "km)";
 		}
 
 		textBlock = new TextObj(textStr, Math.round(maxHeight / 2f) + 1,
@@ -293,7 +309,7 @@ public abstract class LocalMarker implements Marker {
 			dw.setStrokeWidth(1f);
 			dw.setFill(true);
 			dw.paintObj(txtLab, signMarker.x - txtLab.getWidth()
-					/ 2, signMarker.y + maxHeight, currentAngle + 90, 1);
+					/ 2 + 5, signMarker.y + maxHeight, currentAngle + 90, 1);
 		}
 
 	}
