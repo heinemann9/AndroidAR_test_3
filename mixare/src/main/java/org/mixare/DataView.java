@@ -123,6 +123,9 @@ public class DataView {
 		this.frozen = frozen;
 	}
 
+	public List<Marker> getMarkers() {
+		return markers;
+	}
 	public float getRadius() {
 		return radius;
 	}
@@ -242,7 +245,8 @@ public class DataView {
 			// if (ma.isActive() && (ma.getDistance() / 1000f < radius || ma
 			// instanceof NavigationMarker || ma instanceof SocialMarker)) {
 			if (ma.isActive() && (ma.getDistance() / 1000f < radius)) {
-
+				//수정 중
+				if(ma.getCategory() == "학교건물"){}
 				// To increase performance don't recalculate position vector
 				// for every marker on every draw call, instead do this only
 				// after onLocationChanged and after downloading new marker
@@ -254,8 +258,12 @@ public class DataView {
 			}
 		}
 
+		//수정중
+		if(mixContext.getActualMixView().choicedAll == true){
+
+		}
 		// Draw Radar
-		drawRadar(dw);
+		//drawRadar(dw);
 
 		// Get next event
 		UIEvent evt = null;

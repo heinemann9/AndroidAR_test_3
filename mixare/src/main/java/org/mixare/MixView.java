@@ -154,15 +154,11 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			/*Get the preference file PREFS_NAME stored in the internal memory of the phone*/
 			SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-			
-			/*check if the application is launched for the first time*/
 
+			/*check if the application is launched for the first time*/
 			if(settings.getBoolean("firstAccess",false)==false){
 				firstAccess(settings);
 			}
-
-
-
 		} catch (Exception ex) {
 			doError(ex);
 		}
@@ -522,13 +518,13 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		menu_relative1 = (RelativeLayout)findViewById(R.id.menu_relative1);
 		menu_relative2 = (RelativeLayout)findViewById(R.id.menu_relative2);
 
-		edit_img1 = (ImageButton)findViewById(R.id.edit_img1);
+		edit_img1 = (ImageButton)findViewById(R.id.edit_img1);  // search
 		edit_img2 = (ImageButton)findViewById(R.id.edit_img2);
 
 		main_relative = (RelativeLayout)findViewById(R.id.main_relative);
 		edit_relative = (RelativeLayout)findViewById(R.id.edit_relative);
 
-		search = (EditText)findViewById(R.id.edit_search);
+		search = (EditText)findViewById(R.id.edit_search);      // edittext search
 
 		menu_flag = false;
 		edit_flag = false;
@@ -583,6 +579,12 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			@Override
 			public void onClick(View v) {
 				setSearchMenu(edit_flag);
+                // search 수정 중 (?)
+                if(search.getText().toString() != null){
+                    doMixSearch(search.getText().toString());
+                    // 혹시 작동?
+                }
+
 			}
 		});
 
@@ -621,24 +623,13 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 					choicedETC = false;
 				}
 
-				// 모든 Marker를 받아오는 작업 수행
-				DataHandler dh = getDataView().getDataHandler();
-				if (!getDataView().isFrozen()) {
-					MixListView.originalMarkerList = dh.getMarkerList();
-					MixMap.originalMarkerList = dh.getMarkerList();
-				}
+				getDataView().clearEvents();
+				setDataView(null); //It's smelly code, but enforce garbage collector
+				//to release data.
 
-				// 카테고리 값에 따른 Marker 띄우기
-				if (dh.getMarkerCount() > 0) {
-					for (int i = 0; i < dh.getMarkerCount(); i++) {
-						Marker ma = dh.getMarker(i);
-						if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
-							ma.draw(getdWindow(), getMixViewData().getMixContext());	// 마커 draw하는 부분
-						}
-						//if (ma.getCategory().equals("학교이름")) {
-						//}
-					}
-				}
+				setdWindow(new PaintScreen());
+				setDataView(new DataView(mixViewData.getMixContext()));
+
 			}
 		});
 
@@ -700,36 +691,33 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-						textAll.setTextColor(Color.WHITE);
-						textSchool.setTextColor(Color.WHITE);
-						textFood.setTextColor(Color.rgb(255, 187, 0));
-						textBook.setTextColor(Color.WHITE);
-						textETC.setTextColor(Color.WHITE);
-						choicedAll = false;
-						choicedSchool = false;
-						choicedFood = true;
-						choicedBook = false;
-						choicedETC = false;
-				}
+                    textAll.setTextColor(Color.WHITE);
+                    textSchool.setTextColor(Color.WHITE);
+                    textFood.setTextColor(Color.rgb(255, 187, 0));
+                    textBook.setTextColor(Color.WHITE);
+                    textETC.setTextColor(Color.WHITE);
+                    choicedAll = false;
+                    choicedSchool = false;
+                    choicedFood = true;
+                    choicedBook = false;
+                    choicedETC = false;
 
-				// 모든 Marker를 받아오는 작업 수행
-				DataHandler dh = getDataView().getDataHandler();
-				if (!getDataView().isFrozen()) {
-					MixListView.originalMarkerList = dh.getMarkerList();
-					MixMap.originalMarkerList = dh.getMarkerList();
-				}
-
-				// 카테고리 값에 따른 Marker 띄우기
-				// 메모리 오류 Fatal signal 11 (SIGSEGV), code 1, fault addr 0x1f0 in tid 10699 (ndroidar_test_3)
-				if (dh.getMarkerCount() > 0) {
-					for (int i = 0; i < dh.getMarkerCount(); i++) {
-						Marker ma = dh.getMarker(i);
-						if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
-							if (ma.getCategory().equals("음식")) {
-								ma.draw(getdWindow(),getMixViewData().getMixContext());	// 마커 draw하는 부분
+					// 모든 Marker를 받아오는 작업 수행
+					DataHandler dh = getDataView().getDataHandler();
+                    setdWindow(new PaintScreen());
+					Log.i("category_marker", "add marker");
+					// 카테고리 값에 따른 Marker 띄우기
+					// 메모리 오류 Fatal signal 11 (SIGSEGV), code 1, fault addr 0x1f0 in tid 10699 (ndroidar_test_3)
+					if (dh.getMarkerCount() > 0) {
+						for (int i = 0; i < dh.getMarkerCount(); i++) {
+							Marker ma = dh.getMarker(i);
+							if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
+								if (ma.getCategory().equals("음식")) {
+									Log.i("category_marker","음식 draw");
+									ma.draw(getdWindow(),getDataView().getContext());	// 마커 draw하는 부분
+								}
 							}
 						}
-
 					}
 				}
 			}
@@ -1306,15 +1294,32 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		if (jLayer.getMarkerCount() > 0) {
 			for (int i = 0; i < jLayer.getMarkerCount(); i++) {
 				Marker ma = jLayer.getMarker(i);
-				if (ma.getTitle().toLowerCase().indexOf(query.toLowerCase()) != -1) {
+                if(ma.getTitle().equals(query)){
+				//if (ma.getTitle().toLowerCase().indexOf(query.toLowerCase()) != -1) {
 					searchResults.add(ma);
 					/* the website for the corresponding title */
 				}
 			}
 		}
+
 		if (searchResults.size() > 0) {
-			getDataView().setFrozen(true);
+            //getDataView().setFrozen(true);
 			jLayer.setMarkerList(searchResults);
+
+            // search 후 draw 수정중
+            // fatal error (?)
+            for (int i = jLayer.getMarkerCount() - 1; i >= 0; i--) {
+                Marker ma = jLayer.getMarker(i);
+
+                if (ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())) {
+
+                    Log.i("ma.draw","순서 "+ i+1);
+                    ma.draw(MixView.getdWindow(),mixViewData.getMixContext());	// 마커 draw하는 부분
+                }
+            }
+            Toast.makeText(this,
+                    "setMarkerList:"+searchResults.get(0),
+                    Toast.LENGTH_LONG).show();
 		} else
 			Toast.makeText(this,
 					getString(R.string.search_failed_notification),
