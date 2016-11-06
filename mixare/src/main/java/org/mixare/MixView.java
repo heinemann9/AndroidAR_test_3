@@ -655,16 +655,18 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 				}
 				else {
 					//to do
-						textAll.setTextColor(Color.WHITE);
-						textSchool.setTextColor(Color.rgb(255, 187, 0));
-						textFood.setTextColor(Color.WHITE);
-						textBook.setTextColor(Color.WHITE);
-						textETC.setTextColor(Color.WHITE);
-						choicedAll = false;
-						choicedSchool = true;
-						choicedFood = false;
-						choicedBook = false;
-						choicedETC = false;
+                    textAll.setTextColor(Color.WHITE);
+                    textSchool.setTextColor(Color.rgb(255, 187, 0));
+                    textFood.setTextColor(Color.WHITE);
+                    textBook.setTextColor(Color.WHITE);
+                    textETC.setTextColor(Color.WHITE);
+                    choicedAll = false;
+                    choicedSchool = true;
+                    choicedFood = false;
+                    choicedBook = false;
+                    choicedETC = false;
+
+                    oneCategoryMarker("학교건물");
 				}
 			}
 		});
@@ -702,23 +704,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
                     choicedBook = false;
                     choicedETC = false;
 
-					// 모든 Marker를 받아오는 작업 수행
-					DataHandler dh = getDataView().getDataHandler();
-                    setdWindow(new PaintScreen());
-					Log.i("category_marker", "add marker");
-					// 카테고리 값에 따른 Marker 띄우기
-					// 메모리 오류 Fatal signal 11 (SIGSEGV), code 1, fault addr 0x1f0 in tid 10699 (ndroidar_test_3)
-					if (dh.getMarkerCount() > 0) {
-						for (int i = 0; i < dh.getMarkerCount(); i++) {
-							Marker ma = dh.getMarker(i);
-							if(ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())){
-								if (ma.getCategory().equals("음식")) {
-									Log.i("category_marker","음식 draw");
-									ma.draw(getdWindow(),getDataView().getContext());	// 마커 draw하는 부분
-								}
-							}
-						}
-					}
+
 				}
 			}
 		});
@@ -1282,6 +1268,43 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		handleIntent(intent);
 	}
 
+    // 카테고리 별 마커 생성
+    private void oneCategoryMarker(String query){
+        DataHandler jLayer = getDataView().getDataHandler();
+        if (!getDataView().isFrozen()) {
+            MixListView.originalMarkerList = jLayer.getMarkerList();
+            MixMap.originalMarkerList = jLayer.getMarkerList();
+        }
+
+        ArrayList<Marker> CategoryResult = new ArrayList<Marker>();
+        //Log.d("SEARCH-------------------0", "" + query);
+        if (jLayer.getMarkerCount() > 0) {
+            for (int i = 0; i < jLayer.getMarkerCount(); i++) {
+                Marker ma = jLayer.getMarker(i);
+                if(ma.getCategory().contains(query)) {
+                    // 이 단어를 포함하면 add
+                    CategoryResult.add(ma);
+					/* the website for the corresponding title */
+                }
+            }
+        }
+
+        if (CategoryResult.size() > 0) {
+            getDataView().setFrozen(true);
+            jLayer.setMarkerList(CategoryResult);
+            // 이후에 dataview에서 뭘 해주면 해당 마커만 보일 것으로 판단
+
+            Toast.makeText(this,
+                    "setMarkerList:" + CategoryResult.get(0),
+                    Toast.LENGTH_LONG).show();
+
+        } else
+            Toast.makeText(this,
+                    getString(R.string.search_failed_notification),
+                    Toast.LENGTH_LONG).show();
+    }
+
+    // search 수정 중
 	private void doMixSearch(String query) {
 		DataHandler jLayer = getDataView().getDataHandler();
 		if (!getDataView().isFrozen()) {
@@ -1294,8 +1317,8 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		if (jLayer.getMarkerCount() > 0) {
 			for (int i = 0; i < jLayer.getMarkerCount(); i++) {
 				Marker ma = jLayer.getMarker(i);
-                if(ma.getTitle().equals(query)){
-				//if (ma.getTitle().toLowerCase().indexOf(query.toLowerCase()) != -1) {
+                if(ma.getTitle().contains(query)){
+                    // 이 단어를 포함하면 add
 					searchResults.add(ma);
 					/* the website for the corresponding title */
 				}
@@ -1303,23 +1326,14 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		}
 
 		if (searchResults.size() > 0) {
-            //getDataView().setFrozen(true);
-			jLayer.setMarkerList(searchResults);
+            getDataView().setFrozen(true);
+            jLayer.setMarkerList(searchResults);
+            // 이후에 dataview에서 뭘 해주면 해당 마커만 보일 것으로 판단
 
-            // search 후 draw 수정중
-            // fatal error (?)
-            for (int i = jLayer.getMarkerCount() - 1; i >= 0; i--) {
-                Marker ma = jLayer.getMarker(i);
-
-                if (ma.isActive() && (ma.getDistance() / 1000f < getDataView().getRadius())) {
-
-                    Log.i("ma.draw","순서 "+ i+1);
-                    ma.draw(MixView.getdWindow(),mixViewData.getMixContext());	// 마커 draw하는 부분
-                }
-            }
             Toast.makeText(this,
-                    "setMarkerList:"+searchResults.get(0),
+                    "setMarkerList:" + searchResults.get(0),
                     Toast.LENGTH_LONG).show();
+
 		} else
 			Toast.makeText(this,
 					getString(R.string.search_failed_notification),

@@ -46,6 +46,7 @@ import org.mixare.mgr.downloader.DownloadRequest;
 import org.mixare.mgr.downloader.DownloadResult;
 
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.location.Location;
 import android.util.Log;
 import android.widget.Toast;
