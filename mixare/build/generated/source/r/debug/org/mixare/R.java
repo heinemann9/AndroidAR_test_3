@@ -9,184 +9,1387 @@ package org.mixare;
 
 public final class R {
     public static final class array {
-        public static int datasourcetypelist=0x7f060000;
-        public static int defaultdatasources=0x7f060001;
-        public static int displaytypelist=0x7f060002;
+        public static int datasourcetypelist=0x7f070000;
+        public static int defaultdatasources=0x7f070001;
+        public static int displaytypelist=0x7f070002;
     }
     public static final class attr {
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int adSize=0x7f010000;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int adSizes=0x7f010001;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int adUnitId=0x7f010002;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>holo_dark</code></td><td>0</td><td></td></tr>
+<tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static int appTheme=0x7f010017;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
+</table>
+         */
+        public static int buyButtonAppearance=0x7f01001e;
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+         */
+        public static int buyButtonHeight=0x7f01001b;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
+<tr><td><code>book_now</code></td><td>3</td><td></td></tr>
+<tr><td><code>donate_with_google</code></td><td>4</td><td></td></tr>
+</table>
+         */
+        public static int buyButtonText=0x7f01001d;
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+         */
+        public static int buyButtonWidth=0x7f01001c;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int cameraBearing=0x7f010008;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int cameraTargetLat=0x7f010009;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int cameraTargetLng=0x7f01000a;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int cameraTilt=0x7f01000b;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int cameraZoom=0x7f01000c;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int circleCrop=0x7f010006;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>production</code></td><td>1</td><td></td></tr>
+<tr><td><code>sandbox</code></td><td>0</td><td></td></tr>
+<tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static int environment=0x7f010018;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buyButton</code></td><td>1</td><td></td></tr>
+<tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static int fragmentMode=0x7f01001a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static int fragmentStyle=0x7f010019;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int imageAspectRatio=0x7f010005;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
+<tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static int imageAspectRatioAdjust=0x7f010004;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int liteMode=0x7f01000d;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+         */
+        public static int mapType=0x7f010007;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static int maskedWalletDetailsBackground=0x7f010021;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static int maskedWalletDetailsButtonBackground=0x7f010023;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static int maskedWalletDetailsButtonTextAppearance=0x7f010022;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static int maskedWalletDetailsHeaderTextAppearance=0x7f010020;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static int maskedWalletDetailsLogoImageType=0x7f010025;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int maskedWalletDetailsLogoTextColor=0x7f010024;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static int maskedWalletDetailsTextAppearance=0x7f01001f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiCompass=0x7f01000e;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiMapToolbar=0x7f010016;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiRotateGestures=0x7f01000f;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiScrollGestures=0x7f010010;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiTiltGestures=0x7f010011;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiZoomControls=0x7f010012;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int uiZoomGestures=0x7f010013;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int useViewLifecycle=0x7f010014;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>slide</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static int windowTransitionStyle=0x7f010003;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int zOrderOnTop=0x7f010015;
+    }
+    public static final class color {
+        public static int common_action_bar_splitter=0x7f080000;
+        public static int common_signin_btn_dark_text_default=0x7f080001;
+        public static int common_signin_btn_dark_text_disabled=0x7f080002;
+        public static int common_signin_btn_dark_text_focused=0x7f080003;
+        public static int common_signin_btn_dark_text_pressed=0x7f080004;
+        public static int common_signin_btn_default_background=0x7f080005;
+        public static int common_signin_btn_light_text_default=0x7f080006;
+        public static int common_signin_btn_light_text_disabled=0x7f080007;
+        public static int common_signin_btn_light_text_focused=0x7f080008;
+        public static int common_signin_btn_light_text_pressed=0x7f080009;
+        public static int common_signin_btn_text_dark=0x7f080017;
+        public static int common_signin_btn_text_light=0x7f080018;
+        public static int wallet_bright_foreground_disabled_holo_light=0x7f08000a;
+        public static int wallet_bright_foreground_holo_dark=0x7f08000b;
+        public static int wallet_bright_foreground_holo_light=0x7f08000c;
+        public static int wallet_dim_foreground_disabled_holo_dark=0x7f08000d;
+        public static int wallet_dim_foreground_holo_dark=0x7f08000e;
+        public static int wallet_dim_foreground_inverse_disabled_holo_dark=0x7f08000f;
+        public static int wallet_dim_foreground_inverse_holo_dark=0x7f080010;
+        public static int wallet_highlighted_text_holo_dark=0x7f080011;
+        public static int wallet_highlighted_text_holo_light=0x7f080012;
+        public static int wallet_hint_foreground_holo_dark=0x7f080013;
+        public static int wallet_hint_foreground_holo_light=0x7f080014;
+        public static int wallet_holo_blue_light=0x7f080015;
+        public static int wallet_link_text_light=0x7f080016;
+        public static int wallet_primary_text_holo_light=0x7f080019;
+        public static int wallet_secondary_text_holo_dark=0x7f08001a;
     }
     public static final class drawable {
         public static int arena=0x7f020000;
         public static int background=0x7f020001;
-        public static int building=0x7f020002;
-        public static int buzz=0x7f020003;
-        public static int gachon_test=0x7f020004;
-        public static int ic_launcher=0x7f020005;
-        public static int icon_datasource=0x7f020006;
-        public static int icon_edit=0x7f020007;
-        public static int icon_map=0x7f020008;
-        public static int icon_white=0x7f020009;
-        public static int icon_white1=0x7f02000a;
-        public static int loc_icon=0x7f02000b;
-        public static int logo=0x7f02000c;
-        public static int menu=0x7f02000d;
-        public static int menu1=0x7f02000e;
-        public static int osm=0x7f02000f;
-        public static int search=0x7f020010;
-        public static int twitter=0x7f020011;
-        public static int wikipedia=0x7f020012;
+        public static int book=0x7f020002;
+        public static int building=0x7f020003;
+        public static int buildings=0x7f020004;
+        public static int buzz=0x7f020005;
+        public static int common_full_open_on_phone=0x7f020006;
+        public static int common_ic_googleplayservices=0x7f020007;
+        public static int common_signin_btn_icon_dark=0x7f020008;
+        public static int common_signin_btn_icon_disabled_dark=0x7f020009;
+        public static int common_signin_btn_icon_disabled_focus_dark=0x7f02000a;
+        public static int common_signin_btn_icon_disabled_focus_light=0x7f02000b;
+        public static int common_signin_btn_icon_disabled_light=0x7f02000c;
+        public static int common_signin_btn_icon_focus_dark=0x7f02000d;
+        public static int common_signin_btn_icon_focus_light=0x7f02000e;
+        public static int common_signin_btn_icon_light=0x7f02000f;
+        public static int common_signin_btn_icon_normal_dark=0x7f020010;
+        public static int common_signin_btn_icon_normal_light=0x7f020011;
+        public static int common_signin_btn_icon_pressed_dark=0x7f020012;
+        public static int common_signin_btn_icon_pressed_light=0x7f020013;
+        public static int common_signin_btn_text_dark=0x7f020014;
+        public static int common_signin_btn_text_disabled_dark=0x7f020015;
+        public static int common_signin_btn_text_disabled_focus_dark=0x7f020016;
+        public static int common_signin_btn_text_disabled_focus_light=0x7f020017;
+        public static int common_signin_btn_text_disabled_light=0x7f020018;
+        public static int common_signin_btn_text_focus_dark=0x7f020019;
+        public static int common_signin_btn_text_focus_light=0x7f02001a;
+        public static int common_signin_btn_text_light=0x7f02001b;
+        public static int common_signin_btn_text_normal_dark=0x7f02001c;
+        public static int common_signin_btn_text_normal_light=0x7f02001d;
+        public static int common_signin_btn_text_pressed_dark=0x7f02001e;
+        public static int common_signin_btn_text_pressed_light=0x7f02001f;
+        public static int etc=0x7f020020;
+        public static int food=0x7f020021;
+        public static int gachon_test=0x7f020022;
+        public static int ic_launcher=0x7f020023;
+        public static int ic_plusone_medium_off_client=0x7f020024;
+        public static int ic_plusone_small_off_client=0x7f020025;
+        public static int ic_plusone_standard_off_client=0x7f020026;
+        public static int ic_plusone_tall_off_client=0x7f020027;
+        public static int icon_datasource=0x7f020028;
+        public static int icon_edit=0x7f020029;
+        public static int icon_map=0x7f02002a;
+        public static int icon_white=0x7f02002b;
+        public static int icon_white1=0x7f02002c;
+        public static int loc_icon=0x7f02002d;
+        public static int logo=0x7f02002e;
+        public static int menu=0x7f02002f;
+        public static int menu1=0x7f020030;
+        public static int osm=0x7f020031;
+        public static int powered_by_google_dark=0x7f020032;
+        public static int powered_by_google_light=0x7f020033;
+        public static int search=0x7f020034;
+        public static int twitter=0x7f020035;
+        public static int wikipedia=0x7f020036;
     }
     public static final class id {
-        public static int Floor_info=0x7f08002d;
-        public static int Floor_info_name=0x7f08002c;
-        public static int Major_info=0x7f08002f;
-        public static int Major_info_name=0x7f08002e;
-        public static int POI_name=0x7f080026;
-        public static int POI_picture=0x7f080027;
-        public static int ScrollView01=0x7f080018;
-        public static int Structure_intro=0x7f08002b;
-        public static int Structure_intro_name=0x7f08002a;
-        public static int Tel_info=0x7f080029;
-        public static int Tel_info_name=0x7f080028;
-        public static int activity_article_close_button=0x7f080033;
-        public static int activity_article_frame_layout=0x7f080031;
-        public static int activity_article_web_view=0x7f080032;
-        public static int cameraPreview=0x7f080001;
-        public static int datasource_icon=0x7f080022;
-        public static int description_text=0x7f080024;
-        public static int displaytype=0x7f080020;
-        public static int displaytypeLabel=0x7f08001f;
-        public static int edit_img1=0x7f080015;
-        public static int edit_img2=0x7f080013;
-        public static int edit_relative=0x7f080012;
-        public static int edit_search=0x7f080014;
-        public static int imageView1=0x7f080030;
-        public static int img1=0x7f080017;
-        public static int img2=0x7f080016;
-        public static int list_checkbox=0x7f080025;
-        public static int list_text=0x7f080023;
-        public static int main_relative=0x7f080002;
-        public static int menu_img1=0x7f080005;
-        public static int menu_img2=0x7f080004;
-        public static int menu_relative1=0x7f080003;
-        public static int menu_relative2=0x7f080006;
-        public static int name=0x7f08001a;
-        public static int nameLabel=0x7f080019;
-        public static int option_info=0x7f080037;
-        public static int option_markerInit=0x7f080036;
-        public static int option_onMap=0x7f080035;
-        public static int option_onMulti=0x7f080034;
-        public static int relativeLatout1=0x7f080000;
-        public static int row_layout=0x7f080021;
-        public static int textAll=0x7f080007;
-        public static int textBook=0x7f08000d;
-        public static int textETC=0x7f08000f;
-        public static int textFood=0x7f08000b;
-        public static int textOption=0x7f080011;
-        public static int textSchool=0x7f080009;
-        public static int textView10=0x7f08000e;
-        public static int textView11=0x7f080010;
-        public static int textView7=0x7f080008;
-        public static int textView8=0x7f08000a;
-        public static int textView9=0x7f08000c;
-        public static int type=0x7f08001e;
-        public static int typeLabel=0x7f08001d;
-        public static int url=0x7f08001c;
-        public static int urlLabel=0x7f08001b;
+        public static int Floor_info=0x7f0c0046;
+        public static int Floor_info_name=0x7f0c0045;
+        public static int Major_info=0x7f0c0048;
+        public static int Major_info_name=0x7f0c0047;
+        public static int POI_name=0x7f0c003f;
+        public static int POI_picture=0x7f0c0040;
+        public static int ScrollView01=0x7f0c0030;
+        public static int Structure_intro=0x7f0c0044;
+        public static int Structure_intro_name=0x7f0c0043;
+        public static int Tel_info=0x7f0c0042;
+        public static int Tel_info_name=0x7f0c0041;
+        public static int activity_article_close_button=0x7f0c004c;
+        public static int activity_article_frame_layout=0x7f0c004a;
+        public static int activity_article_web_view=0x7f0c004b;
+        public static int adjust_height=0x7f0c0002;
+        public static int adjust_width=0x7f0c0003;
+        public static int book_now=0x7f0c0011;
+        public static int buyButton=0x7f0c000d;
+        public static int buy_now=0x7f0c0012;
+        public static int buy_with_google=0x7f0c0013;
+        public static int cameraPreview=0x7f0c0019;
+        public static int classic=0x7f0c0015;
+        public static int datasource_icon=0x7f0c003a;
+        public static int description_text=0x7f0c003c;
+        public static int displaytype=0x7f0c0038;
+        public static int displaytypeLabel=0x7f0c0037;
+        public static int donate_with_google=0x7f0c0014;
+        public static int edit_img1=0x7f0c002d;
+        public static int edit_img2=0x7f0c002b;
+        public static int edit_relative=0x7f0c002a;
+        public static int edit_search=0x7f0c002c;
+        public static int grayscale=0x7f0c0016;
+        public static int holo_dark=0x7f0c0008;
+        public static int holo_light=0x7f0c0009;
+        public static int hybrid=0x7f0c0004;
+        public static int imageView1=0x7f0c0049;
+        public static int img1=0x7f0c002f;
+        public static int img2=0x7f0c002e;
+        public static int list_checkbox=0x7f0c003d;
+        public static int list_text=0x7f0c003b;
+        public static int main_relative=0x7f0c001a;
+        public static int map=0x7f0c003e;
+        public static int match_parent=0x7f0c000f;
+        public static int menu_img1=0x7f0c001d;
+        public static int menu_img2=0x7f0c001c;
+        public static int menu_relative1=0x7f0c001b;
+        public static int menu_relative2=0x7f0c001e;
+        public static int monochrome=0x7f0c0017;
+        public static int name=0x7f0c0032;
+        public static int nameLabel=0x7f0c0031;
+        public static int none=0x7f0c0000;
+        public static int normal=0x7f0c0005;
+        public static int option_info=0x7f0c0050;
+        public static int option_markerInit=0x7f0c004f;
+        public static int option_onMap=0x7f0c004e;
+        public static int option_onMulti=0x7f0c004d;
+        public static int production=0x7f0c000a;
+        public static int relativeLatout1=0x7f0c0018;
+        public static int row_layout=0x7f0c0039;
+        public static int sandbox=0x7f0c000b;
+        public static int satellite=0x7f0c0006;
+        public static int selectionDetails=0x7f0c000e;
+        public static int slide=0x7f0c0001;
+        public static int strict_sandbox=0x7f0c000c;
+        public static int terrain=0x7f0c0007;
+        public static int textAll=0x7f0c001f;
+        public static int textBook=0x7f0c0025;
+        public static int textETC=0x7f0c0027;
+        public static int textFood=0x7f0c0023;
+        public static int textOption=0x7f0c0029;
+        public static int textSchool=0x7f0c0021;
+        public static int textView10=0x7f0c0026;
+        public static int textView11=0x7f0c0028;
+        public static int textView7=0x7f0c0020;
+        public static int textView8=0x7f0c0022;
+        public static int textView9=0x7f0c0024;
+        public static int type=0x7f0c0036;
+        public static int typeLabel=0x7f0c0035;
+        public static int url=0x7f0c0034;
+        public static int urlLabel=0x7f0c0033;
+        public static int wrap_content=0x7f0c0010;
+    }
+    public static final class integer {
+        public static int google_play_services_version=0x7f090000;
     }
     public static final class layout {
         public static int activity_main=0x7f030000;
         public static int datasourcedetails=0x7f030001;
         public static int datasourcelist=0x7f030002;
         public static int main=0x7f030003;
-        public static int poi_info_book=0x7f030004;
-        public static int poi_info_etc=0x7f030005;
-        public static int poi_info_food=0x7f030006;
-        public static int poi_info_school=0x7f030007;
-        public static int splashscreen=0x7f030008;
-        public static int webview=0x7f030009;
+        public static int mapactivity=0x7f030004;
+        public static int poi_info_book=0x7f030005;
+        public static int poi_info_etc=0x7f030006;
+        public static int poi_info_food=0x7f030007;
+        public static int poi_info_school=0x7f030008;
+        public static int splashscreen=0x7f030009;
+        public static int webview=0x7f03000a;
     }
     public static final class menu {
-        public static int option=0x7f070000;
+        public static int option=0x7f0b0000;
+    }
+    public static final class raw {
+        public static int gtm_analytics=0x7f050000;
     }
     public static final class string {
-        public static int CIRCLE_MARKER=0x7f050032;
-        public static int E=0x7f050000;
-        public static int MIXARE=0x7f050033;
-        public static int N=0x7f050001;
-        public static int NAVIGATION_MARKER=0x7f050034;
-        public static int NE=0x7f050002;
-        public static int NW=0x7f050003;
-        public static int OSM=0x7f050035;
-        public static int S=0x7f050004;
-        public static int SE=0x7f050005;
-        public static int SW=0x7f050006;
-        public static int W=0x7f050007;
-        public static int accuracy=0x7f050008;
-        public static int add_osm_menu=0x7f050036;
-        public static int altitude=0x7f050009;
-        public static int app_name=0x7f05000a;
-        public static int cancel=0x7f050037;
-        public static int close_button=0x7f05000b;
-        public static int connection_GPS_dialog_button1=0x7f05000c;
-        public static int connection_GPS_dialog_button2=0x7f05000d;
-        public static int connection_GPS_dialog_text=0x7f05000e;
-        public static int connection_error_dialog=0x7f05000f;
-        public static int connection_error_dialog_button1=0x7f050010;
-        public static int connection_error_dialog_button2=0x7f050011;
-        public static int connection_error_dialog_button3=0x7f050012;
-        public static int data_source_add=0x7f050038;
-        public static int data_source_change_osm=0x7f050013;
-        public static int data_source_change_twitter=0x7f050014;
-        public static int data_source_change_wikipedia=0x7f050015;
-        public static int data_source_delete=0x7f050039;
-        public static int data_source_delete_err=0x7f05003a;
-        public static int data_source_edit=0x7f05003b;
-        public static int data_source_edit_err=0x7f05003c;
-        public static int download_error=0x7f05003d;
-        public static int download_received=0x7f05003e;
-        public static int empty_list=0x7f050016;
-        public static int general_info_text=0x7f050017;
-        public static int general_info_title=0x7f050018;
-        public static int gps_last_fix=0x7f050019;
-        public static int insert_osm_url=0x7f05003f;
-        public static int latitude=0x7f05001a;
-        public static int launch_plugins=0x7f050044;
-        public static int license=0x7f05001b;
-        public static int license_title=0x7f05001c;
-        public static int location_not_found=0x7f050040;
-        public static int longitude=0x7f05001d;
-        public static int map_current_location_click=0x7f05001e;
-        public static int map_menu_cam_mode=0x7f05001f;
-        public static int map_menu_normal_mode=0x7f050020;
-        public static int map_menu_satellite_mode=0x7f050021;
-        public static int map_my_location=0x7f050022;
-        public static int map_toggle_path_off=0x7f050045;
-        public static int map_toggle_path_on=0x7f050046;
-        public static int menu_item_1=0x7f050023;
-        public static int menu_item_2=0x7f050024;
-        public static int menu_item_3=0x7f050025;
-        public static int menu_item_4=0x7f050026;
-        public static int menu_item_5=0x7f050027;
-        public static int menu_item_6=0x7f050028;
-        public static int menu_item_7=0x7f050029;
-        public static int no=0x7f050047;
-        public static int no_website_available=0x7f05002a;
-        public static int option_not_available=0x7f05002b;
-        public static int osm_max_object_menu=0x7f050041;
-        public static int plugin_message=0x7f050048;
-        public static int refreshing=0x7f050042;
-        public static int remember_this_decision=0x7f050049;
-        public static int search_active_1=0x7f05002c;
-        public static int search_active_2=0x7f05002d;
-        public static int search_failed_notification=0x7f05002e;
-        public static int search_hint=0x7f05002f;
-        public static int set_osm_max_object=0x7f050043;
-        public static int source_openstreetmap=0x7f050030;
-        public static int speed=0x7f050031;
-        public static int yes=0x7f05004a;
+        public static int CIRCLE_MARKER=0x7f060051;
+        public static int E=0x7f06001f;
+        public static int MIXARE=0x7f060052;
+        public static int N=0x7f060020;
+        public static int NAVIGATION_MARKER=0x7f060053;
+        public static int NE=0x7f060021;
+        public static int NW=0x7f060022;
+        public static int OSM=0x7f060054;
+        public static int S=0x7f060023;
+        public static int SE=0x7f060024;
+        public static int SW=0x7f060025;
+        public static int W=0x7f060026;
+        public static int accept=0x7f06006b;
+        public static int accuracy=0x7f060027;
+        public static int add_osm_menu=0x7f060055;
+        public static int altitude=0x7f060028;
+        public static int app_name=0x7f060029;
+        public static int cancel=0x7f060056;
+        public static int close_button=0x7f06002a;
+        public static int common_android_wear_notification_needs_update_text=0x7f060000;
+        public static int common_android_wear_update_text=0x7f060001;
+        public static int common_android_wear_update_title=0x7f060002;
+        public static int common_google_play_services_enable_button=0x7f060003;
+        public static int common_google_play_services_enable_text=0x7f060004;
+        public static int common_google_play_services_enable_title=0x7f060005;
+        public static int common_google_play_services_error_notification_requested_by_msg=0x7f060006;
+        public static int common_google_play_services_install_button=0x7f060007;
+        public static int common_google_play_services_install_text_phone=0x7f060008;
+        public static int common_google_play_services_install_text_tablet=0x7f060009;
+        public static int common_google_play_services_install_title=0x7f06000a;
+        public static int common_google_play_services_invalid_account_text=0x7f06000b;
+        public static int common_google_play_services_invalid_account_title=0x7f06000c;
+        public static int common_google_play_services_needs_enabling_title=0x7f06000d;
+        public static int common_google_play_services_network_error_text=0x7f06000e;
+        public static int common_google_play_services_network_error_title=0x7f06000f;
+        public static int common_google_play_services_notification_needs_installation_title=0x7f060010;
+        public static int common_google_play_services_notification_needs_update_title=0x7f060011;
+        public static int common_google_play_services_notification_ticker=0x7f060012;
+        public static int common_google_play_services_sign_in_failed_text=0x7f060013;
+        public static int common_google_play_services_sign_in_failed_title=0x7f060014;
+        public static int common_google_play_services_unknown_issue=0x7f060015;
+        public static int common_google_play_services_unsupported_text=0x7f060016;
+        public static int common_google_play_services_unsupported_title=0x7f060017;
+        public static int common_google_play_services_update_button=0x7f060018;
+        public static int common_google_play_services_update_text=0x7f060019;
+        public static int common_google_play_services_update_title=0x7f06001a;
+        public static int common_open_on_phone=0x7f06001b;
+        public static int common_signin_button_text=0x7f06001c;
+        public static int common_signin_button_text_long=0x7f06001d;
+        public static int commono_google_play_services_api_unavailable_text=0x7f06001e;
+        public static int connection_GPS_dialog_button1=0x7f06002b;
+        public static int connection_GPS_dialog_button2=0x7f06002c;
+        public static int connection_GPS_dialog_text=0x7f06002d;
+        public static int connection_error_dialog=0x7f06002e;
+        public static int connection_error_dialog_button1=0x7f06002f;
+        public static int connection_error_dialog_button2=0x7f060030;
+        public static int connection_error_dialog_button3=0x7f060031;
+        public static int create_calendar_message=0x7f06006c;
+        public static int create_calendar_title=0x7f06006d;
+        public static int data_source_add=0x7f060057;
+        public static int data_source_change_osm=0x7f060032;
+        public static int data_source_change_twitter=0x7f060033;
+        public static int data_source_change_wikipedia=0x7f060034;
+        public static int data_source_delete=0x7f060058;
+        public static int data_source_delete_err=0x7f060059;
+        public static int data_source_edit=0x7f06005a;
+        public static int data_source_edit_err=0x7f06005b;
+        public static int decline=0x7f06006e;
+        public static int download_error=0x7f06005c;
+        public static int download_received=0x7f06005d;
+        public static int empty_list=0x7f060035;
+        public static int general_info_text=0x7f060036;
+        public static int general_info_title=0x7f060037;
+        public static int gps_last_fix=0x7f060038;
+        public static int insert_osm_url=0x7f06005e;
+        public static int latitude=0x7f060039;
+        public static int launch_plugins=0x7f060064;
+        public static int license=0x7f06003a;
+        public static int license_title=0x7f06003b;
+        public static int location_not_found=0x7f06005f;
+        public static int longitude=0x7f06003c;
+        public static int map_current_location_click=0x7f06003d;
+        public static int map_menu_cam_mode=0x7f06003e;
+        public static int map_menu_normal_mode=0x7f06003f;
+        public static int map_menu_satellite_mode=0x7f060040;
+        public static int map_my_location=0x7f060041;
+        public static int map_toggle_path_off=0x7f060065;
+        public static int map_toggle_path_on=0x7f060066;
+        public static int menu_item_1=0x7f060042;
+        public static int menu_item_2=0x7f060043;
+        public static int menu_item_3=0x7f060044;
+        public static int menu_item_4=0x7f060045;
+        public static int menu_item_5=0x7f060046;
+        public static int menu_item_6=0x7f060047;
+        public static int menu_item_7=0x7f060048;
+        public static int no=0x7f060067;
+        public static int no_website_available=0x7f060049;
+        public static int option_not_available=0x7f06004a;
+        public static int osm_max_object_menu=0x7f060060;
+        public static int plugin_message=0x7f060068;
+        public static int refreshing=0x7f060061;
+        public static int remember_this_decision=0x7f060069;
+        public static int search_active_1=0x7f06004b;
+        public static int search_active_2=0x7f06004c;
+        public static int search_failed_notification=0x7f06004d;
+        public static int search_hint=0x7f06004e;
+        public static int set_osm_max_object=0x7f060062;
+        public static int source_openstreetmap=0x7f06004f;
+        public static int speed=0x7f060050;
+        public static int store_picture_message=0x7f06006f;
+        public static int store_picture_title=0x7f060070;
+        public static int wallet_buy_button_place_holder=0x7f060063;
+        public static int yes=0x7f06006a;
+    }
+    public static final class style {
+        public static int Theme_IAPTheme=0x7f0a0000;
+        public static int WalletFragmentDefaultButtonTextAppearance=0x7f0a0001;
+        public static int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f0a0002;
+        public static int WalletFragmentDefaultDetailsTextAppearance=0x7f0a0003;
+        public static int WalletFragmentDefaultStyle=0x7f0a0004;
     }
     public static final class xml {
         public static int searchable=0x7f040000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a AdsAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #AdsAttrs_adSize org.mixare:adSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #AdsAttrs_adSizes org.mixare:adSizes}</code></td><td></td></tr>
+           <tr><td><code>{@link #AdsAttrs_adUnitId org.mixare:adUnitId}</code></td><td></td></tr>
+           </table>
+           @see #AdsAttrs_adSize
+           @see #AdsAttrs_adSizes
+           @see #AdsAttrs_adUnitId
+         */
+        public static final int[] AdsAttrs = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#adSize}
+          attribute's value can be found in the {@link #AdsAttrs} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:adSize
+        */
+        public static int AdsAttrs_adSize = 0;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#adSizes}
+          attribute's value can be found in the {@link #AdsAttrs} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:adSizes
+        */
+        public static int AdsAttrs_adSizes = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#adUnitId}
+          attribute's value can be found in the {@link #AdsAttrs} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:adUnitId
+        */
+        public static int AdsAttrs_adUnitId = 2;
+        /** Attributes that can be used with a CustomWalletTheme.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CustomWalletTheme_windowTransitionStyle org.mixare:windowTransitionStyle}</code></td><td></td></tr>
+           </table>
+           @see #CustomWalletTheme_windowTransitionStyle
+         */
+        public static final int[] CustomWalletTheme = {
+            0x7f010003
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#windowTransitionStyle}
+          attribute's value can be found in the {@link #CustomWalletTheme} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>slide</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name org.mixare:windowTransitionStyle
+        */
+        public static int CustomWalletTheme_windowTransitionStyle = 0;
+        /** Attributes that can be used with a LoadingImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #LoadingImageView_circleCrop org.mixare:circleCrop}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatio org.mixare:imageAspectRatio}</code></td><td></td></tr>
+           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust org.mixare:imageAspectRatioAdjust}</code></td><td></td></tr>
+           </table>
+           @see #LoadingImageView_circleCrop
+           @see #LoadingImageView_imageAspectRatio
+           @see #LoadingImageView_imageAspectRatioAdjust
+         */
+        public static final int[] LoadingImageView = {
+            0x7f010004, 0x7f010005, 0x7f010006
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#circleCrop}
+          attribute's value can be found in the {@link #LoadingImageView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:circleCrop
+        */
+        public static int LoadingImageView_circleCrop = 2;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#imageAspectRatio}
+          attribute's value can be found in the {@link #LoadingImageView} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:imageAspectRatio
+        */
+        public static int LoadingImageView_imageAspectRatio = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#imageAspectRatioAdjust}
+          attribute's value can be found in the {@link #LoadingImageView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
+<tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name org.mixare:imageAspectRatioAdjust
+        */
+        public static int LoadingImageView_imageAspectRatioAdjust = 0;
+        /** Attributes that can be used with a MapAttrs.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #MapAttrs_cameraBearing org.mixare:cameraBearing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLat org.mixare:cameraTargetLat}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTargetLng org.mixare:cameraTargetLng}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraTilt org.mixare:cameraTilt}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_cameraZoom org.mixare:cameraZoom}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_liteMode org.mixare:liteMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_mapType org.mixare:mapType}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiCompass org.mixare:uiCompass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiMapToolbar org.mixare:uiMapToolbar}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiRotateGestures org.mixare:uiRotateGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiScrollGestures org.mixare:uiScrollGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiTiltGestures org.mixare:uiTiltGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomControls org.mixare:uiZoomControls}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_uiZoomGestures org.mixare:uiZoomGestures}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_useViewLifecycle org.mixare:useViewLifecycle}</code></td><td></td></tr>
+           <tr><td><code>{@link #MapAttrs_zOrderOnTop org.mixare:zOrderOnTop}</code></td><td></td></tr>
+           </table>
+           @see #MapAttrs_cameraBearing
+           @see #MapAttrs_cameraTargetLat
+           @see #MapAttrs_cameraTargetLng
+           @see #MapAttrs_cameraTilt
+           @see #MapAttrs_cameraZoom
+           @see #MapAttrs_liteMode
+           @see #MapAttrs_mapType
+           @see #MapAttrs_uiCompass
+           @see #MapAttrs_uiMapToolbar
+           @see #MapAttrs_uiRotateGestures
+           @see #MapAttrs_uiScrollGestures
+           @see #MapAttrs_uiTiltGestures
+           @see #MapAttrs_uiZoomControls
+           @see #MapAttrs_uiZoomGestures
+           @see #MapAttrs_useViewLifecycle
+           @see #MapAttrs_zOrderOnTop
+         */
+        public static final int[] MapAttrs = {
+            0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a,
+            0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e,
+            0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012,
+            0x7f010013, 0x7f010014, 0x7f010015, 0x7f010016
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#cameraBearing}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:cameraBearing
+        */
+        public static int MapAttrs_cameraBearing = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#cameraTargetLat}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:cameraTargetLat
+        */
+        public static int MapAttrs_cameraTargetLat = 2;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#cameraTargetLng}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:cameraTargetLng
+        */
+        public static int MapAttrs_cameraTargetLng = 3;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#cameraTilt}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:cameraTilt
+        */
+        public static int MapAttrs_cameraTilt = 4;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#cameraZoom}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:cameraZoom
+        */
+        public static int MapAttrs_cameraZoom = 5;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#liteMode}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:liteMode
+        */
+        public static int MapAttrs_liteMode = 6;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#mapType}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>normal</code></td><td>1</td><td></td></tr>
+<tr><td><code>satellite</code></td><td>2</td><td></td></tr>
+<tr><td><code>terrain</code></td><td>3</td><td></td></tr>
+<tr><td><code>hybrid</code></td><td>4</td><td></td></tr>
+</table>
+          @attr name org.mixare:mapType
+        */
+        public static int MapAttrs_mapType = 0;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiCompass}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiCompass
+        */
+        public static int MapAttrs_uiCompass = 7;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiMapToolbar}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiMapToolbar
+        */
+        public static int MapAttrs_uiMapToolbar = 15;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiRotateGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiRotateGestures
+        */
+        public static int MapAttrs_uiRotateGestures = 8;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiScrollGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiScrollGestures
+        */
+        public static int MapAttrs_uiScrollGestures = 9;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiTiltGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiTiltGestures
+        */
+        public static int MapAttrs_uiTiltGestures = 10;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiZoomControls}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiZoomControls
+        */
+        public static int MapAttrs_uiZoomControls = 11;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#uiZoomGestures}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:uiZoomGestures
+        */
+        public static int MapAttrs_uiZoomGestures = 12;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#useViewLifecycle}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:useViewLifecycle
+        */
+        public static int MapAttrs_useViewLifecycle = 13;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#zOrderOnTop}
+          attribute's value can be found in the {@link #MapAttrs} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:zOrderOnTop
+        */
+        public static int MapAttrs_zOrderOnTop = 14;
+        /** Attributes that can be used with a WalletFragmentOptions.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_appTheme org.mixare:appTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_environment org.mixare:environment}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentMode org.mixare:fragmentMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentOptions_fragmentStyle org.mixare:fragmentStyle}</code></td><td></td></tr>
+           </table>
+           @see #WalletFragmentOptions_appTheme
+           @see #WalletFragmentOptions_environment
+           @see #WalletFragmentOptions_fragmentMode
+           @see #WalletFragmentOptions_fragmentStyle
+         */
+        public static final int[] WalletFragmentOptions = {
+            0x7f010017, 0x7f010018, 0x7f010019, 0x7f01001a
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#appTheme}
+          attribute's value can be found in the {@link #WalletFragmentOptions} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>holo_dark</code></td><td>0</td><td></td></tr>
+<tr><td><code>holo_light</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name org.mixare:appTheme
+        */
+        public static int WalletFragmentOptions_appTheme = 0;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#environment}
+          attribute's value can be found in the {@link #WalletFragmentOptions} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>production</code></td><td>1</td><td></td></tr>
+<tr><td><code>sandbox</code></td><td>0</td><td></td></tr>
+<tr><td><code>strict_sandbox</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name org.mixare:environment
+        */
+        public static int WalletFragmentOptions_environment = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#fragmentMode}
+          attribute's value can be found in the {@link #WalletFragmentOptions} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buyButton</code></td><td>1</td><td></td></tr>
+<tr><td><code>selectionDetails</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name org.mixare:fragmentMode
+        */
+        public static int WalletFragmentOptions_fragmentMode = 3;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#fragmentStyle}
+          attribute's value can be found in the {@link #WalletFragmentOptions} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.mixare:fragmentStyle
+        */
+        public static int WalletFragmentOptions_fragmentStyle = 2;
+        /** Attributes that can be used with a WalletFragmentStyle.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonAppearance org.mixare:buyButtonAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonHeight org.mixare:buyButtonHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonText org.mixare:buyButtonText}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_buyButtonWidth org.mixare:buyButtonWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsBackground org.mixare:maskedWalletDetailsBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonBackground org.mixare:maskedWalletDetailsButtonBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance org.mixare:maskedWalletDetailsButtonTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance org.mixare:maskedWalletDetailsHeaderTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoImageType org.mixare:maskedWalletDetailsLogoImageType}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsLogoTextColor org.mixare:maskedWalletDetailsLogoTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WalletFragmentStyle_maskedWalletDetailsTextAppearance org.mixare:maskedWalletDetailsTextAppearance}</code></td><td></td></tr>
+           </table>
+           @see #WalletFragmentStyle_buyButtonAppearance
+           @see #WalletFragmentStyle_buyButtonHeight
+           @see #WalletFragmentStyle_buyButtonText
+           @see #WalletFragmentStyle_buyButtonWidth
+           @see #WalletFragmentStyle_maskedWalletDetailsBackground
+           @see #WalletFragmentStyle_maskedWalletDetailsButtonBackground
+           @see #WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance
+           @see #WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance
+           @see #WalletFragmentStyle_maskedWalletDetailsLogoImageType
+           @see #WalletFragmentStyle_maskedWalletDetailsLogoTextColor
+           @see #WalletFragmentStyle_maskedWalletDetailsTextAppearance
+         */
+        public static final int[] WalletFragmentStyle = {
+            0x7f01001b, 0x7f01001c, 0x7f01001d, 0x7f01001e,
+            0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022,
+            0x7f010023, 0x7f010024, 0x7f010025
+        };
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#buyButtonAppearance}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>grayscale</code></td><td>2</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>3</td><td></td></tr>
+</table>
+          @attr name org.mixare:buyButtonAppearance
+        */
+        public static int WalletFragmentStyle_buyButtonAppearance = 3;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#buyButtonHeight}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+          @attr name org.mixare:buyButtonHeight
+        */
+        public static int WalletFragmentStyle_buyButtonHeight = 0;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#buyButtonText}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>buy_with_google</code></td><td>1</td><td></td></tr>
+<tr><td><code>buy_now</code></td><td>2</td><td></td></tr>
+<tr><td><code>book_now</code></td><td>3</td><td></td></tr>
+<tr><td><code>donate_with_google</code></td><td>4</td><td></td></tr>
+</table>
+          @attr name org.mixare:buyButtonText
+        */
+        public static int WalletFragmentStyle_buyButtonText = 2;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#buyButtonWidth}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>match_parent</code></td><td>-1</td><td></td></tr>
+<tr><td><code>wrap_content</code></td><td>-2</td><td></td></tr>
+</table>
+          @attr name org.mixare:buyButtonWidth
+        */
+        public static int WalletFragmentStyle_buyButtonWidth = 1;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsBackground}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name org.mixare:maskedWalletDetailsBackground
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsBackground = 6;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsButtonBackground}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name org.mixare:maskedWalletDetailsButtonBackground
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsButtonBackground = 8;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsButtonTextAppearance}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.mixare:maskedWalletDetailsButtonTextAppearance
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance = 7;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsHeaderTextAppearance}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.mixare:maskedWalletDetailsHeaderTextAppearance
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance = 5;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsLogoImageType}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>classic</code></td><td>1</td><td></td></tr>
+<tr><td><code>monochrome</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name org.mixare:maskedWalletDetailsLogoImageType
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsLogoImageType = 10;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsLogoTextColor}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name org.mixare:maskedWalletDetailsLogoTextColor
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsLogoTextColor = 9;
+        /**
+          <p>This symbol is the offset where the {@link org.mixare.R.attr#maskedWalletDetailsTextAppearance}
+          attribute's value can be found in the {@link #WalletFragmentStyle} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name org.mixare:maskedWalletDetailsTextAppearance
+        */
+        public static int WalletFragmentStyle_maskedWalletDetailsTextAppearance = 4;
+    };
 }

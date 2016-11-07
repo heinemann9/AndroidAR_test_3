@@ -1,11 +1,43 @@
 [
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_arrow_drop_right_black_24dp.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_arrow_drop_right_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_go_search_api_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_go_search_api_material.png"
+    },
+    {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\osm.png",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\drawable-ldpi\\osm.png"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_search_api_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_search_api_material.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_ab_back_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_ab_back_material.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\osm.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\osm.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\wikipedia.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\wikipedia.png"
+    },
+    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_launcher.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.6.1\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_menu_overflow_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_menu_overflow_material.png"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\osm.png",
@@ -24,8 +56,16 @@
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\wikipedia.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\wikipedia.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_voice_search_api_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_voice_search_api_material.png"
     },
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\wikipedia.png",
@@ -34,5 +74,9 @@
     {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\wikipedia.png",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-ldpi\\wikipedia.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-ldpi-v4\\abc_ic_clear_material.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\abc_ic_clear_material.png"
     }
 ]

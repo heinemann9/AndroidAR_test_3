@@ -20,4 +20,6 @@ android {
 
 dependencies {
     compile project(':mixarelib')
+    compile 'com.google.android.gms:play-services:7.0.0'
+    compile 'com.google.android.gms:play-services-maps:7.0.0'
 }
