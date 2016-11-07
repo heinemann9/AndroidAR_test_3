@@ -1283,21 +1283,20 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
                 Marker ma = jLayer.getMarker(i);
                 if(ma.getCategory().contains(query)) {
                     // 이 단어를 포함하면 add
-                    CategoryResult.add(ma);
+					CategoryResult.add(ma);
 					/* the website for the corresponding title */
                 }
             }
         }
 
         if (CategoryResult.size() > 0) {
-            getDataView().setFrozen(true);
+            //getDataView().setFrozen(true);
             jLayer.setMarkerList(CategoryResult);
             // 이후에 dataview에서 뭘 해주면 해당 마커만 보일 것으로 판단
-
+			getDataView().setDetailsView(true);
             Toast.makeText(this,
                     "setMarkerList:" + CategoryResult.get(0),
                     Toast.LENGTH_LONG).show();
-
         } else
             Toast.makeText(this,
                     getString(R.string.search_failed_notification),

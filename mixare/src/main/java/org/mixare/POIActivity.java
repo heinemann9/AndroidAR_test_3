@@ -42,20 +42,24 @@ public class POIActivity extends Activity {
     TextView floor_info;
     TextView major_info;
 
+    String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.poi_info_school);
 
-        name = (TextView) findViewById(R.id.POI_name);
-        picture = (ImageView)findViewById(R.id.POI_picture);
-        structure_intro = (TextView) findViewById(R.id.Structure_intro);
-        tel_info = (TextView) findViewById(R.id.Tel_info);
-        floor_info = (TextView) findViewById(R.id.Floor_info);
-        major_info = (TextView) findViewById(R.id.Major_info);
-
+        category = getIntent().getStringExtra("category");
+        if(category.equals("학교건물")){
+            setContentView(R.layout.poi_info_school);
+        }else if(category.equals("음식")){
+            setContentView(R.layout.poi_info_food);
+        }else if(category.equals("문구,서적")){
+            setContentView(R.layout.poi_info_book);
+        }else if(category.equals("기타")){
+            setContentView(R.layout.poi_info_etc);
+        }
         JsonToData(getIntent().getStringExtra("json"));
+
     }
 
     // data set
@@ -71,46 +75,98 @@ public class POIActivity extends Activity {
 
                 JSONObject c = arr.getJSONObject(i);
 
+                // 그 외 data 받아오기
+
+                if(category.equals("학교건물")){
+                    //setContentView(R.layout.poi_info_school);
+
+                    name = (TextView) findViewById(R.id.school_POI_name);
+                    picture = (ImageView)findViewById(R.id.school_POI_picture);
+                    structure_intro = (TextView) findViewById(R.id.school_Structure_intro);
+                    tel_info = (TextView) findViewById(R.id.school_Tel_info);
+                    floor_info = (TextView) findViewById(R.id.school_Floor_info);
+                    major_info = (TextView) findViewById(R.id.school_Major_info);
+
+                    // 정보없음 시 setText
+                    if(c.getString(TAG_NAME) == "null") {
+                        name.setText("정보없음");
+                    }else{
+                        name.setText(c.getString(TAG_NAME));
+                    }
+                    if(c.getString(TAG_Structure_Info) == "null") {
+                        structure_intro.setText("정보없음");
+                    }else{
+                        structure_intro.setText(c.getString(TAG_Structure_Info));
+                    }
+                    if(c.getString(TAG_Tel_Info) == "null") {
+                        tel_info.setText("정보없음");
+                    }else{
+                        tel_info.setText(c.getString(TAG_Tel_Info));
+                    }
+                    if(c.getString(TAG_Floor_Info) == "null") {
+                        floor_info.setText("정보없음");
+                    }else{
+                        floor_info.setText(c.getString(TAG_Floor_Info));
+                    }
+                    if(c.getString(TAG_Major_Info) == "null") {
+                        major_info.setText("정보없음");
+                    }else{
+                        major_info.setText(c.getString(TAG_Major_Info));
+                    }
+
+                }else if(category.equals("음식")){
+                    //setContentView(R.layout.poi_info_food);
+
+                    name = (TextView) findViewById(R.id.food_POI_name);
+                    picture = (ImageView)findViewById(R.id.food_POI_picture);
+
+                    if(c.getString(TAG_NAME) == "null") {
+                        name.setText("정보없음");
+                    }else{
+                        name.setText(c.getString(TAG_NAME));
+                    }
+                }else if(category.equals("문구,서적")){
+                    //setContentView(R.layout.poi_info_book);
+
+                    name = (TextView) findViewById(R.id.book_POI_name);
+                    picture = (ImageView)findViewById(R.id.book_POI_picture);
+                    tel_info = (TextView) findViewById(R.id.book_Tel_info);
+
+                    if(c.getString(TAG_NAME) == "null") {
+                        name.setText("정보없음");
+                    }else{
+                        name.setText(c.getString(TAG_NAME));
+                    }
+                    if(c.getString(TAG_Tel_Info) == "null") {
+                        tel_info.setText("정보없음");
+                    }else{
+                        tel_info.setText(c.getString(TAG_Tel_Info));
+                    }
+                }else{
+                    //etc
+                   // setContentView(R.layout.poi_info_etc);
+
+                    name = (TextView) findViewById(R.id.etc_POI_name);
+                    picture = (ImageView)findViewById(R.id.etc_POI_picture);
+                    tel_info = (TextView) findViewById(R.id.etc_Tel_info);
+                    if(c.getString(TAG_NAME) == "null") {
+                        name.setText("정보없음");
+                    }else{
+                        name.setText(c.getString(TAG_NAME));
+                    }
+                    if(c.getString(TAG_Tel_Info) == "null") {
+                        tel_info.setText("정보없음");
+                    }else{
+                        tel_info.setText(c.getString(TAG_Tel_Info));
+                    }
+                }
+
                 // picture 받아오기
                 if(c.getString(TAG_Picture) != "null") {
                     url[i] += c.getString(TAG_Picture);
                     LoadBitmap task = new LoadBitmap();
                     task.execute(url[i]);
                 }
-                // 그 외 data 받아오기
-
-                if(c.getString(TAG_NAME) == "null") {
-                    name.setText("정보없음");
-                }else{
-                    name.setText(c.getString(TAG_NAME));
-                }
-                if(c.getString(TAG_Structure_Info) == "null") {
-                    structure_intro.setText("정보없음");
-                }else{
-                    structure_intro.setText(c.getString(TAG_Structure_Info));
-                }
-                if(c.getString(TAG_Tel_Info) == "null") {
-                    tel_info.setText("정보없음");
-                }else{
-                    tel_info.setText(c.getString(TAG_Tel_Info));
-                }
-                if(c.getString(TAG_Floor_Info) == "null") {
-                    floor_info.setText("정보없음");
-                }else{
-                    floor_info.setText(c.getString(TAG_Floor_Info));
-                }
-                if(c.getString(TAG_Major_Info) == "null") {
-                    major_info.setText("정보없음");
-                }else{
-                    major_info.setText(c.getString(TAG_Major_Info));
-                }
-                /*
-                name.setText(c.getString(TAG_NAME));
-                structure_intro.setText(c.getString(TAG_Structure_Info));
-                tel_info.setText(c.getString(TAG_Tel_Info));
-                floor_info.setText(c.getString(TAG_Floor_Info));
-                major_info.setText(c.getString(TAG_Major_Info));
-                */
             }
 
         } catch (JSONException e) {

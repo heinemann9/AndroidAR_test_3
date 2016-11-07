@@ -20,7 +20,11 @@ package org.mixare;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.mixare.data.convert.GachonDataProcessor;
 import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.MixStateInterface;
@@ -33,6 +37,7 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -57,6 +62,7 @@ public class MixState implements MixStateInterface{
 	private boolean detailsView;
 
 	String temp = "",uri = "";
+	String category = "";
 
 	// activity로 넘기기위한 handle Event
 	@Override
@@ -77,9 +83,12 @@ public class MixState implements MixStateInterface{
 					if(temp != null) {
 						// 액티비티 넘기기
 						Intent intent = new Intent(mixcontext.getActualMixView(), POIActivity.class);
+						getCategory(temp);
 						intent.putExtra("json", temp);
+						intent.putExtra("category", category);
+						Log.i("category : ",category);
 						//mixcontext.startActivity(intent);
-						(mixcontext.getActualMixView()).startActivityForResult(intent,42);
+						(mixcontext.getActualMixView()).startActivityForResult(intent, 42);
 						(mixcontext.getActualMixView()).finish();
 					}
 				} catch (InterruptedException e) {
@@ -93,6 +102,23 @@ public class MixState implements MixStateInterface{
 			}
 		}
 		return true;
+	}
+
+	private void getCategory(String getJson){
+		JSONArray arr;
+		try {
+			arr = new JSONArray(getJson);
+
+			String url[] = new String[arr.length()];
+			Arrays.fill(url, "http://heinemann.cafe24.com/img/");    // Array 초기화
+
+			for(int i = 0; i<arr.length(); i++){
+				JSONObject c = arr.getJSONObject(i);
+				category = c.getString("category");
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean handleEvent(MixContextInterface ctx, String onPress) {

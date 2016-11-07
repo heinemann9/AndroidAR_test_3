@@ -12,16 +12,20 @@
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\arena.png"
     },
     {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\etc.png",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\etc.png"
+    },
+    {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\loc_icon.png",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\loc_icon.png"
     },
     {
-        "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_datasource.png",
-        "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_datasource.png"
-    },
-    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\twitter.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\twitter.png"
+    },
+    {
+        "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_datasource.png",
+        "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_datasource.png"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\buzz.png",
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_map.png",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_map.png"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\food.png",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\food.png"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_white1.png",
@@ -52,6 +60,10 @@
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\logo.png"
     },
     {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\book.png",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\book.png"
+    },
+    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\loc_icon.png",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\loc_icon.png"
     },
@@ -62,6 +74,10 @@
     {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_map.png",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon_map.png"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\buildings.png",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\drawable\\buildings.png"
     },
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon_white1.png",

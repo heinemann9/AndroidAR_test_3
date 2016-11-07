@@ -18,23 +18,27 @@ public final class R {
     public static final class drawable {
         public static final int arena=0x7f020000;
         public static final int background=0x7f020001;
-        public static final int building=0x7f020002;
-        public static final int buzz=0x7f020003;
-        public static final int gachon_test=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int icon_datasource=0x7f020006;
-        public static final int icon_edit=0x7f020007;
-        public static final int icon_map=0x7f020008;
-        public static final int icon_white=0x7f020009;
-        public static final int icon_white1=0x7f02000a;
-        public static final int loc_icon=0x7f02000b;
-        public static final int logo=0x7f02000c;
-        public static final int menu=0x7f02000d;
-        public static final int menu1=0x7f02000e;
-        public static final int osm=0x7f02000f;
-        public static final int search=0x7f020010;
-        public static final int twitter=0x7f020011;
-        public static final int wikipedia=0x7f020012;
+        public static final int book=0x7f020002;
+        public static final int building=0x7f020003;
+        public static final int buildings=0x7f020004;
+        public static final int buzz=0x7f020005;
+        public static final int etc=0x7f020006;
+        public static final int food=0x7f020007;
+        public static final int gachon_test=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int icon_datasource=0x7f02000a;
+        public static final int icon_edit=0x7f02000b;
+        public static final int icon_map=0x7f02000c;
+        public static final int icon_white=0x7f02000d;
+        public static final int icon_white1=0x7f02000e;
+        public static final int loc_icon=0x7f02000f;
+        public static final int logo=0x7f020010;
+        public static final int menu=0x7f020011;
+        public static final int menu1=0x7f020012;
+        public static final int osm=0x7f020013;
+        public static final int search=0x7f020014;
+        public static final int twitter=0x7f020015;
+        public static final int wikipedia=0x7f020016;
     }
     public static final class id {
         public static final int Floor_info=0x7f08002d;

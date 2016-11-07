@@ -6,7 +6,7 @@
     android:background="#ffffff">
 
     <TextView
-        android:id="@+id/POI_name"
+        android:id="@+id/etc_POI_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="test_name_etc"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
                 <ImageView
-                    android:id="@+id/POI_picture"
+                    android:id="@+id/etc_POI_picture"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -38,7 +38,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/Tel_info_name"
+                android:id="@+id/etc_Tel_info_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="◈위치 및 연락처"
@@ -48,7 +48,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/Tel_info"
+                android:id="@+id/etc_Tel_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
