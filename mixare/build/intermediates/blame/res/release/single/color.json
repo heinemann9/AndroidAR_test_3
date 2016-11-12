@@ -56,6 +56,10 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\color\\common_signin_btn_text_light.xml"
     },
     {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\res\\merged\\release\\color\\wallet_primary_text_holo_light.xml",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\7.0.0\\res\\color\\wallet_primary_text_holo_light.xml"
+    },
+    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\color\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\color\\abc_background_cache_hint_selector_material_dark.xml"
     },
@@ -66,6 +70,18 @@
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\color\\switch_thumb_material_light.xml",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\res\\merged\\release\\color\\wallet_secondary_text_holo_dark.xml",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-wallet\\7.0.0\\res\\color\\wallet_secondary_text_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\res\\merged\\release\\color\\common_signin_btn_text_light.xml",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\color\\common_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\res\\merged\\release\\color\\common_signin_btn_text_dark.xml",
+        "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_2\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\color\\common_signin_btn_text_dark.xml"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\color\\abc_primary_text_material_dark.xml",

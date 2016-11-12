@@ -100,7 +100,7 @@
 		 <activity android:name=".POIActivity"/>
 		<activity android:name=".MapActivity"/>
 		<activity android:name=".License"/>
-		 
+		 <activity android:name=".SearchActivity"/>
 </application>
 
 </manifest> 

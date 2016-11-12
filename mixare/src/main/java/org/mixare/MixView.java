@@ -128,6 +128,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 	/* string to name & access the preference file in the internal storage */
 	public static final String PREFS_NAME = "MyPrefsFileForMenuItems";
+	String category;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -1302,10 +1303,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 */
 		// Download로부터 수정할 예정
 
-		getDataView().setDataHandler(new DataHandler());
-		getDataView().getDataHandler().addMarkers(getDataView().getMarkers());
-		getDataView().getDataHandler().onLocationChanged(getDataView().getCurFix());
-
+		category = null;
 		DataHandler jLayer = getDataView().getDataHandler();
 
 		ArrayList<Marker> searchResults = new ArrayList<Marker>();
@@ -1313,12 +1311,26 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		if (jLayer.getMarkerCount() > 0) {
 			for (int i = 0; i < jLayer.getMarkerCount(); i++) {
 				Marker ma = jLayer.getMarker(i);
-                if(ma.getTitle().contains(query)){
-                    // 이 단어를 포함하면 add
+				category = ma.getCategory();
+				if(ma.getTitle().contains(query)){
+					// 이 단어를 포함하면 add
 					searchResults.add(ma);
 					/* the website for the corresponding title */
 				}
 			}
+		}
+
+		// 찾는 자료가 없는 경우
+		if(searchResults.size() < 1){
+			Toast.makeText(this,"해당하는 자료가 없습니다.",Toast.LENGTH_LONG).show();
+			refresh();
+			return ;
+		}else{
+			Intent intent = new Intent(this,SearchActivity.class);
+			intent.putExtra("name",searchResults.get(0).getTitle());
+			intent.putExtra("category",category);
+			startActivityForResult(intent,42);
+			finish();
 		}
 
 		//getDataView().dRes.setMarkers(searchResults);
