@@ -4,6 +4,10 @@
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\layout\\datasourcelist.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_book.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_book.xml"
+    },
+    {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info.xml",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\layout\\poi_info.xml"
     },
@@ -28,6 +32,10 @@
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\webview.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\splashscreen.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\splashscreen.xml"
+    },
+    {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\activity_main.xml"
     },
@@ -40,12 +48,24 @@
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_school.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_food.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_food.xml"
+    },
+    {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_book.xml",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_book.xml"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcelist.xml",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcelist.xml"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\main.xml"
     },
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcedetails.xml",
@@ -64,12 +84,24 @@
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\main.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcelist.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcelist.xml"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_etc.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_etc.xml"
+    },
+    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcedetails.xml",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcedetails.xml"
     },
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\layout\\webview.xml"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcedetails.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcedetails.xml"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\splashscreen.xml",
@@ -84,12 +116,20 @@
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcedetails.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_school.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_school.xml"
+    },
+    {
         "merged": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\poi_info_etc.xml",
         "source": "D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_etc.xml"
     },
     {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\webview.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\webview.xml"
     },
     {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",

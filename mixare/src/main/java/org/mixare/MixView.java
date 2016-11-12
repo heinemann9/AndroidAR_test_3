@@ -208,7 +208,9 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			}
 				return true;
 		}else if(item.getItemId() == R.id.option_onMap){
-			return true;
+			Intent intent = new Intent(MixView.this, MapActivity.class);
+			startActivity(intent);
+
 		}else if(item.getItemId() == R.id.option_markerInit){
 			return true;
 		}else if(item.getItemId() == R.id.option_info){

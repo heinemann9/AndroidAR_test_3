@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\searchable.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\bundles\\debug\\res\\xml\\searchable.xml"
+    },
+    {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\searchable.xml",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\bundles\\debug\\res\\xml\\searchable.xml"
     },
