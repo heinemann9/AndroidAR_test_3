@@ -31,8 +31,9 @@
         <activity android:name=".Splash"
                   android:screenOrientation="landscape" />
     </application>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:required="false" android:name="android.hardware.camera.autofocus"></uses-feature>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 </manifest>

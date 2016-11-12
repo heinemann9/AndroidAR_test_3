@@ -145,7 +145,7 @@ public class MixContext extends ContextWrapper implements MixContextInterface {
 		}
 	}
 
-	private void setActualMixView(MixView mv) {
+	public void setActualMixView(MixView mv) {
 		synchronized (mixView) {
 			this.mixView = mv;
 		}

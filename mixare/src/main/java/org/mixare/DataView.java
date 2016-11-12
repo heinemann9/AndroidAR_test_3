@@ -59,6 +59,9 @@ import android.widget.Toast;
  * 
  */
 public class DataView {
+	/** download value */
+	//DownloadManager dm;
+	//DownloadResult dRes;
 
 	/** current context */
 	private MixContext mixContext;
@@ -127,6 +130,11 @@ public class DataView {
 	public List<Marker> getMarkers() {
 		return markers;
 	}
+
+	public Location getCurFix() {
+		return curFix;
+	}
+
 	public float getRadius() {
 		return radius;
 	}
@@ -138,6 +146,8 @@ public class DataView {
 	public DataHandler getDataHandler() {
 		return dataHandler;
 	}
+
+	public void setDataHandler(DataHandler dataHandler) { this.dataHandler = dataHandler;}
 
 	public boolean isDetailsView() {
 		return state.isDetailsView();
@@ -199,6 +209,7 @@ public class DataView {
 //	}
 
 	public void draw(PaintScreen dw) {
+		Log.v(MixView.TAG, "draw start ");
 		mixContext.getRM(cam.transform);
 		curFix = mixContext.getLocationFinder().getCurrentLocation();
 
@@ -208,13 +219,15 @@ public class DataView {
 		if (state.nextLStatus == MixState.NOT_STARTED && !frozen) {
 			loadDrawLayer();
 			markers = new ArrayList<Marker>();
+
 		}
 		else if (state.nextLStatus == MixState.PROCESSING) {
+
 			DownloadManager dm = mixContext.getDownloadManager();
 			DownloadResult dRes = null;
 
 			markers.addAll(downloadDrawResults(dm, dRes));
-			
+
 			if (dm.isDone()) {
 				retry = 0;
 				state.nextLStatus = MixState.DONE;
@@ -247,7 +260,6 @@ public class DataView {
 			// instanceof NavigationMarker || ma instanceof SocialMarker)) {
 			if (ma.isActive() && (ma.getDistance() / 1000f < radius)) {
 				//수정 중
-				if(ma.getCategory() == "학교건물"){}
 				// To increase performance don't recalculate position vector
 				// for every marker on every draw call, instead do this only
 				// after onLocationChanged and after downloading new marker
@@ -308,16 +320,12 @@ public class DataView {
 			state.nextLStatus = MixState.DONE;
 	}
 	
-	private List<Marker> downloadDrawResults(DownloadManager dm, DownloadResult dRes){
+	public List<Marker> downloadDrawResults(DownloadManager dm, DownloadResult dRes){
 		List<Marker> markers = new ArrayList<Marker>();
 		while ((dRes = dm.getNextResult()) != null) {
 			if (dRes.isError() && retry < 3) {
 				retry++;
-				mixContext.getDownloadManager().submitJob(
-						dRes.getErrorRequest());
-				// Notification
-				// Toast.makeText(mixContext, dRes.errorMsg,
-				// Toast.LENGTH_SHORT).show();
+				mixContext.getDownloadManager().submitJob(dRes.getErrorRequest());
 			}
 			
 			if(!dRes.isError()) {
@@ -325,20 +333,29 @@ public class DataView {
 					//jLayer = (DataHandler) dRes.obj;
 					Log.i(MixView.TAG,"Adding Markers");
 					markers.addAll(dRes.getMarkers());
-
-					// Notification
-//					Toast.makeText(
-//							mixContext,
-//							mixContext.getResources().getString(
-//									R.string.download_received)
-//									+ " " + dRes.getDataSource().getName(),
-//							Toast.LENGTH_SHORT).show();
 				}
 			}
 		}
 		return markers;
 	}
-	
+
+	private List<Marker> downloadDrawResultsForSearch(DownloadManager dm, DownloadResult dRes){
+		List<Marker> markers = new ArrayList<Marker>();
+		while ((dRes = dm.getNextResult()) != null) {
+			if (dRes.isError() && retry < 3) {
+				retry++;
+				mixContext.getDownloadManager().submitJob(dRes.getErrorRequest());
+			}
+
+			if(!dRes.isError()) {
+				if(dRes.getMarkers() != null){
+					Log.i(MixView.TAG,"Adding Markers");
+					markers.addAll(dRes.getMarkers());
+				}
+			}
+		}
+		return markers;
+	}
 
 	/**
 	 * Handles drawing radar and direction.
@@ -476,7 +493,33 @@ public class DataView {
 	public void refresh(){
 		state.nextLStatus = MixState.NOT_STARTED;
 	}
-	
+
+	public void refreshForSearch(PaintScreen dw) {
+
+		mixContext.getRM(cam.transform);
+		curFix = mixContext.getLocationFinder().getCurrentLocation();
+		state.calcPitchBearing(cam.transform);
+		state.nextLStatus = MixState.DONE;
+		dataHandler.onLocationChanged(curFix);
+
+		// Update markers
+		//dataHandler.updateActivationStatus(mixContext);
+		for (int i = dataHandler.getMarkerCount() - 1; i >= 0; i--) {
+			Marker ma = dataHandler.getMarker(i);
+			// if (ma.isActive() && (ma.getDistance() / 1000f < radius || ma
+			// instanceof NavigationMarker || ma instanceof SocialMarker)) {
+			if (ma.isActive() && (ma.getDistance() / 1000f < radius)) {
+				// To increase performance don't recalculate position vector
+				// for every marker on every draw call, instead do this only
+				// after onLocationChanged and after downloading new marker
+				// if (!frozen)
+				// ma.update(curFix);
+				if (!frozen)
+					ma.calcPaint(cam, addX, addY);
+				ma.draw(dw, mixContext);    // 마커 draw하는 부분
+			}
+		}
+	}
 	private void callRefreshToast(){
 		mixContext.getActualMixView().runOnUiThread(new Runnable() {
 			

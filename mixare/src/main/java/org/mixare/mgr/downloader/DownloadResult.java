@@ -21,6 +21,7 @@ package org.mixare.mgr.downloader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mixare.DataView;
 import org.mixare.data.DataSource;
 import org.mixare.lib.marker.Marker;
 
@@ -133,6 +134,7 @@ public class DownloadResult {
 
 	public void setGachonAccomplish(List<Marker> markers) {
 		//setIdOfDownloadRequest(idOfDownloadRequest);
+
 		setMarkers(markers);
 		//setDataSource(ds);
 		setError(false);

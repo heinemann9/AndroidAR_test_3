@@ -276,6 +276,7 @@ class AugmentedView extends View {
 	int searchObjWidth = 0;
 	int searchObjHeight = 0;
 
+	Canvas canvas;
 	Paint zoomPaint = new Paint();
 
 	public AugmentedView(Context context) {
@@ -305,6 +306,7 @@ class AugmentedView extends View {
 			//
 			// return;
 			// }
+			this.canvas = canvas;
 
 			app.killOnError();
 

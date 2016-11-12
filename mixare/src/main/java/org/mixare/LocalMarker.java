@@ -245,16 +245,16 @@ public abstract class LocalMarker implements Marker {
 		if (isVisible) {
 			if(category.equals("학교건물")) {
 				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.buildings);
-				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+				dw.paintBitmap(bitmap, cMarker.x-50.f, cMarker.y - 60.0f);
 			}else if(category.equals("음식")){
 				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.food);
-				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+				dw.paintBitmap(bitmap, cMarker.x-50.f, cMarker.y - 60.0f);
 			}else if(category.equals("문구,서적")){
 				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.book);
-				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+				dw.paintBitmap(bitmap, cMarker.x-50.f, cMarker.y - 60.0f);
 			}else if(category.equals("기타")){
 				Bitmap bitmap = BitmapFactory.decodeResource(ctx.getResources(), R.drawable.etc);
-				dw.paintBitmap(bitmap, cMarker.x-120.f, cMarker.y - 200.0f);
+				dw.paintBitmap(bitmap, cMarker.x-50.f, cMarker.y - 60.0f);
 			}
 		}
 	}

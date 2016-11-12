@@ -26,6 +26,7 @@ package org.mixare;
  * It also handles the main sensor events, touch events and location events.
  */
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.SearchManager;
@@ -33,6 +34,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
@@ -54,6 +56,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.EditText;
@@ -72,9 +75,13 @@ import org.mixare.lib.MixContextInterface;
 import org.mixare.lib.gui.PaintScreen;
 import org.mixare.lib.marker.Marker;
 import org.mixare.lib.render.Matrix;
+import org.mixare.mgr.downloader.DownloadManager;
+import org.mixare.mgr.downloader.DownloadResult;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static android.hardware.SensorManager.SENSOR_DELAY_GAME;
 
@@ -128,7 +135,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		//MixView.CONTEXT = this;
 		try {
 
-			handleIntent(getIntent());
+			//handleIntent(getIntent());
 
 			final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 			getMixViewData().setmWakeLock(pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "My Tag"));
@@ -318,16 +325,14 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 
 			//maintainMenu();
 
-			repaint();
+			//repaint();
 			getDataView().doStart();
 			//getDataView().clearEvents();
 
 			getMixViewData().getMixContext().getDataSourceManager().refreshDataSources();
 
 			float angleX, angleY;
-
 			int marker_orientation = -90;
-
 			int rotation = Compatibility.getRotation(this);
 
 			// display text from left to right and keep it horizontal
@@ -455,7 +460,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		super.onRestart();
 		maintainCamera();
 		maintainMenu();
-		maintainAugmentR();
+		//maintainAugmentR();
 		maintainZoomBar();
 	}
 	
@@ -484,14 +489,25 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	/**
 	 * Checks augScreen, if it does not exist, it creates one.
 	 */
-	private void maintainAugmentR() {
+	void maintainAugmentR() {
 		if (augScreen == null ){
 		augScreen = new AugmentedView(this);
 		}
 		addContentView(augScreen, new LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+
 	}
-	
+
+	void refreshmaintainAugmentR() {
+		((ViewGroup)augScreen.getParent()).removeView(augScreen);
+		if (augScreen == null ){
+			augScreen = new AugmentedView(this);
+		}
+
+		addContentView(augScreen, new LayoutParams(
+				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+
+	}
 	/**
 	 * Creates a zoom bar and adds it to view.
 	 */
@@ -583,6 +599,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
                 if(search.getText().toString() != null){
                     doMixSearch(search.getText().toString());
                     // 혹시 작동?
+
                 }
 
 			}
@@ -666,7 +683,6 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
                     choicedBook = false;
                     choicedETC = false;
 
-                    oneCategoryMarker("학교건물");
 				}
 			}
 		});
@@ -1258,7 +1274,7 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 	private void handleIntent(Intent intent) {
 		if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 			String query = intent.getStringExtra(SearchManager.QUERY);
-			doMixSearch(query);
+			//doMixSearch(query);
 		}
 	}
 
@@ -1268,48 +1284,25 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 		handleIntent(intent);
 	}
 
-    // 카테고리 별 마커 생성
-    private void oneCategoryMarker(String query){
-        DataHandler jLayer = getDataView().getDataHandler();
-        if (!getDataView().isFrozen()) {
-            MixListView.originalMarkerList = jLayer.getMarkerList();
-            MixMap.originalMarkerList = jLayer.getMarkerList();
-        }
-
-        ArrayList<Marker> CategoryResult = new ArrayList<Marker>();
-        //Log.d("SEARCH-------------------0", "" + query);
-        if (jLayer.getMarkerCount() > 0) {
-            for (int i = 0; i < jLayer.getMarkerCount(); i++) {
-                Marker ma = jLayer.getMarker(i);
-                if(ma.getCategory().contains(query)) {
-                    // 이 단어를 포함하면 add
-					CategoryResult.add(ma);
-					/* the website for the corresponding title */
-                }
-            }
-        }
-
-        if (CategoryResult.size() > 0) {
-            //getDataView().setFrozen(true);
-            jLayer.setMarkerList(CategoryResult);
-            // 이후에 dataview에서 뭘 해주면 해당 마커만 보일 것으로 판단
-			getDataView().setDetailsView(true);
-            Toast.makeText(this,
-                    "setMarkerList:" + CategoryResult.get(0),
-                    Toast.LENGTH_LONG).show();
-        } else
-            Toast.makeText(this,
-                    getString(R.string.search_failed_notification),
-                    Toast.LENGTH_LONG).show();
-    }
-
     // search 수정 중
+	// 만약 마커로 못띄우는 경우 액티비티로 넘길예정
 	private void doMixSearch(String query) {
-		DataHandler jLayer = getDataView().getDataHandler();
-		if (!getDataView().isFrozen()) {
-			MixListView.originalMarkerList = jLayer.getMarkerList();
-			MixMap.originalMarkerList = jLayer.getMarkerList();
+/*
+		setdWindow(new PaintScreen());
+		getMixViewData().getMixContext().getActualMixView().refreshmaintainAugmentR();
+		if (!getDataView().isInited()) {
+			getDataView().init(getdWindow().getWidth(),
+					getdWindow().getHeight());
 		}
+		MixView.getdWindow().setCanvas(augScreen.canvas);
+*/
+		// Download로부터 수정할 예정
+
+		getDataView().setDataHandler(new DataHandler());
+		getDataView().getDataHandler().addMarkers(getDataView().getMarkers());
+		getDataView().getDataHandler().onLocationChanged(getDataView().getCurFix());
+
+		DataHandler jLayer = getDataView().getDataHandler();
 
 		ArrayList<Marker> searchResults = new ArrayList<Marker>();
 		//Log.d("SEARCH-------------------0", "" + query);
@@ -1324,19 +1317,22 @@ public class MixView extends Activity implements SensorEventListener, OnTouchLis
 			}
 		}
 
+		//getDataView().dRes.setMarkers(searchResults);
+/*
 		if (searchResults.size() > 0) {
-            getDataView().setFrozen(true);
-            jLayer.setMarkerList(searchResults);
+            //getDataView().setFrozen(true);
+			getDataView().dRes.setMarkers(searchResults);
+            //jLayer.setMarkerList(searchResults);
+			getDataView().setDataHandler(jLayer);
+			//getDataView().refreshForSearch(getdWindow());
             // 이후에 dataview에서 뭘 해주면 해당 마커만 보일 것으로 판단
 
-            Toast.makeText(this,
-                    "setMarkerList:" + searchResults.get(0),
-                    Toast.LENGTH_LONG).show();
-
+            Toast.makeText(this, "setMarkerList:" + searchResults.get(0), Toast.LENGTH_LONG).show();
 		} else
 			Toast.makeText(this,
 					getString(R.string.search_failed_notification),
 					Toast.LENGTH_LONG).show();
+*/
 	}
 
 	/* ******* Getter and Setters ********** */
