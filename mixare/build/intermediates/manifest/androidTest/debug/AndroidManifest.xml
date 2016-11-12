@@ -136,6 +136,7 @@
         <activity android:name="org.mixare.data.DataSourceList" />
         <activity android:name="org.mixare.POIActivity" />
         <activity android:name="org.mixare.MapActivity" />
+        <activity android:name="org.mixare.License" />
     </application>
 
 </manifest>

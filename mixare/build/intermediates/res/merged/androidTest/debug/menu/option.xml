@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/option_onMulti"
+        android:checkable="true"
+        android:title="다중선택"></item>
+    <item
+        android:id="@+id/option_onMap"
+        android:title="지도보기"></item>
+    <item
+        android:id="@+id/option_markerInit"
+        android:title="마커 초기화"></item>
+    <item
+        android:id="@+id/option_info"
+        android:title="Info/License"></item>
+
+</menu>

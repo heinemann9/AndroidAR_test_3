@@ -96,6 +96,10 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\poi_info_etc.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\license.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\license.xml"
+    },
+    {
         "merged": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\debug\\layout\\datasourcedetails.xml",
         "source": "D:\\senior\\graduation_project\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\datasourcedetails.xml"
     },
