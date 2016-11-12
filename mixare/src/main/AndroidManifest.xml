@@ -99,6 +99,7 @@
 		 <activity android:name=".data.DataSourceList" />
 		 <activity android:name=".POIActivity"/>
 		<activity android:name=".MapActivity"/>
+		<activity android:name=".License"/>
 		 
 </application>
 
