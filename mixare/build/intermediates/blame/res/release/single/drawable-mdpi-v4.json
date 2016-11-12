@@ -40,12 +40,12 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_volume_off_grey600_36.png"
     },
     {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_pause_light.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_pause_light.png"
-    },
-    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_voice_search_api_material.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\abc_ic_voice_search_api_material.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_pause_light.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_pause_light.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\search.png",
-        "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\drawable-mdpi\\search.png"
-    },
-    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\search.png",
+        "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\drawable-mdpi\\search.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_play_dark.png",
@@ -140,16 +140,16 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_closed_caption_grey600_36.png"
     },
     {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_pressed_light.9.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\drawable-mdpi\\common_signin_btn_text_pressed_light.9.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\quantum_ic_closed_caption_white_36.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_closed_caption_white_36.png"
     },
     {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_signin_btn_text_pressed_light.9.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\drawable-mdpi\\common_signin_btn_text_pressed_light.9.png"
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_skip_previous_white_36.png"
     },
     {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\quantum_ic_replay_30_grey600_36.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_replay_30_grey600_36.png"
-    },
-    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_tv_light.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_tv_light.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\quantum_ic_replay_30_grey600_36.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-mdpi-v4\\quantum_ic_replay_30_grey600_36.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
@@ -248,6 +248,10 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-location\\7.0.0\\res\\drawable-mdpi\\powered_by_google_dark.png"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\logo.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\logo.png"
+    },
+    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_cast_grey.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_cast_grey.png"
     },
@@ -276,12 +280,12 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_speaker_dark.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_speaker_dark.png"
-    },
-    {
         "merged": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\background.png",
         "source": "C:\\mobile_program\\AndroidAR_test_1\\mixare\\src\\main\\res\\drawable-mdpi\\background.png"
+    },
+    {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_speaker_dark.png",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\24.0.0\\res\\drawable-mdpi-v4\\ic_speaker_dark.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\quantum_ic_forward_30_white_24.png",
@@ -638,10 +642,6 @@
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\background.png",
-        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\drawable-mdpi\\background.png"
     },
     {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_disabled.9.png",

@@ -312,6 +312,10 @@
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
+        "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\layout\\license.xml",
+        "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\src\\main\\res\\layout\\license.xml"
+    },
+    {
         "merged": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\res\\merged\\release\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixare\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },

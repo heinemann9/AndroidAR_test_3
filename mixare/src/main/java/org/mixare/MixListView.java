@@ -266,7 +266,7 @@ public class MixListView extends ListActivity {
 }
 
 /**
- * The ListItemAdapter is can store properties of list items, like background or
+ * The ListItemAdapter is can store properties of list items, like logo or
  * text color
  */
 class ListItemAdapter extends BaseAdapter {
