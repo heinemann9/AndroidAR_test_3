@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\senior\\Laboratory\\summer_competition\\AndroidAR_test_3\\mixarelib\\src\\main\\aidl\\org\\mixare\\lib\\service\\IDataHandlerService.aidl
+ * Original file: C:\\Users\\MJ\\Desktop\\AndroidAR_test_3\\mixarelib\\src\\main\\aidl\\org\\mixare\\lib\\service\\IDataHandlerService.aidl
  */
 package org.mixare.lib.service;
 /**
